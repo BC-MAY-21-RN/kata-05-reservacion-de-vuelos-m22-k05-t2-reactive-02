@@ -1,17 +1,17 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-import CheckBox from '@react-native-community/checkbox';
+
+import {Checkbox} from 'react-native-paper';
 
 const Cbox = () => {
-  const [toggleCheckBox, setToggleCheckBox] = useState(false);
+  const [checked, setChecked] = useState(false);
   return (
     <View style={styles.container}>
-      <CheckBox
-        disabled={false}
-        value={toggleCheckBox}
-        onValueChange={() =>
-          toggleCheckBox ? setToggleCheckBox(false) : setToggleCheckBox(true)
-        }
+      <Checkbox
+        status={checked ? 'checked' : 'unchecked'}
+        onPress={() => {
+          setChecked(!checked);
+        }}
       />
       <Text style={styles.text}>Terminos y condiciones</Text>
     </View>
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   text: {
+    color: 'black',
     margin: 5,
   },
 });
