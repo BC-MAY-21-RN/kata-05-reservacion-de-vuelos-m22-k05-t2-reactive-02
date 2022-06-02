@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:959127818437:android:13d8fdf60686fbd424a0ac",
+        "mobilesdk_app_id": "1:959127818437:android:91b20c7042f626bc24a0ac",
         "android_client_info": {
-          "package_name": "com.android.application"
+          "package_name": "com.reservaciondevuelos"
         }
       },
       "oauth_client": [
