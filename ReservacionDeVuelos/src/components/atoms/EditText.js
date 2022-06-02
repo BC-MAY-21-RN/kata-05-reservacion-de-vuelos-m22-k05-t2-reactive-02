@@ -1,57 +1,58 @@
-import React from 'react';
-import { View, Text, TextInput, StyleSheet } from "react-native";
-import Icon from 'react-native-vector-icons/AntDesign';
+import React, {useState} from 'react';
+import {View, Text, TextInput, StyleSheet} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
-const EditTextS = ({label="", place="", security=false, value="", setValue=null, icon, onIconclick }) => {
-
+const EditTextS = ({
+  label = '',
+  security = false,
+  value = '',
+  setValue = null,
+  icon,
+  onIconclick,
+}) => {
   const changeText = text => setValue(text);
-
+  const [changeBorder, setChangeBorder] = useState(false);
+  const onLikePress = () => setChangeBorder(!changeBorder);
   return (
-    <View style={styles.row}>  
-        
-        <View style={styles.textContainer}>
-            
-            <Text style={styles.textLabel}>
-                {label}
-            </Text>  
-            <View>
-              <TextInput
-              type="Text"
-              placeholder={place}
-              style={styles.textInput}
-              secureTextEntry={security}
-              value={value}
-              onChangeText={changeText}
-              placeholderTextColor={'#808B96'}
-              />
-              
-            </View>
-            
-              
+    <View style={styles.row}>
+      <View style={styles.textContainer}>
+        <Text style={styles.textLabel}>{label}</Text>
+        <View style={styles.positionElements}>
+          <TextInput
+            type="Text"
+            secureTextEntry={security}
+            value={value}
+            onChangeText={changeText}
+            style={changeBorder ? styles.container : styles.textInput}
+            onPress={onLikePress}
+          />
+          {icon && (
+            <Icon
+              style={styles.iconEye}
+              size={25}
+              color={'#C4C4C4'}
+              name={icon}
+              onPress={onIconclick}
+            />
+          )}
         </View>
-        {icon && <Icon 
-                style={styles.iconEye}
-                size={26} 
-                color={'#2f8f94'}
-                name={icon}
-                onPress={onIconclick}    
-              />
-              }
-        
+      </View>
     </View>
-    )
-    
+  );
 };
 
 const styles = StyleSheet.create({
-  row: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
+  container: {
+    borderColor: '#618DC9',
+    borderWidth: 1,
   },
-
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
   textInput: {
     borderColor: '#000000',
-    borderWidth: 2,
+    borderWidth: 1,
     fontSize: 16,
     height: 40,
     backgroundColor: '#FFFFFF',
@@ -71,19 +72,10 @@ const styles = StyleSheet.create({
   },
 
   iconEye: {
-    position: 'relative',
-    marginTop: 30,
-    fontSize: 20,
+    position: 'absolute',
+    marginTop: 7,
+    right: 10,
   },
-})
-
+});
 
 export default EditTextS;
-
-
-
-
-
-
-
-
