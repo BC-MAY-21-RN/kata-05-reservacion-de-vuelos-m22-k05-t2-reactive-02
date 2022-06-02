@@ -4,20 +4,23 @@ import Button from './src/components/atoms/Button';
 import EditText from './src/components/atoms/EditText';
 import Checkbox from './src/components/atoms/CheckBoxes';
 
-
 const App = () => {
-  const [ShowPassword, setShowPassword] = useState(false)
+  const [Password, setPassword] = useState('');
+  const [ShowPassword, setShowPassword] = useState(false);
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Sign Up</Text>
       <EditText label="First Name" />
       <EditText label="Email*" />
-      <EditText 
-        label="Password*" 
+      <EditText
+        label="Password*"
         security={!ShowPassword}
-        icon={ShowPassword ? "eyeo" : "eye"}
-        onIconclick={() => setShowPassword(!ShowPassword)}      
+        value={Password}
+        setValue={setPassword}
+        icon={ShowPassword ? 'eye' : 'eye-off'}
+        onIconclick={() => setShowPassword(!ShowPassword)}
       />
+      <Checkbox />
       <Checkbox />
       <Button />
     </View>
@@ -26,7 +29,11 @@ const App = () => {
 export default App;
 
 const styles = StyleSheet.create({
+  selected: {
+    borderColor: '#618DC9',
+  },
   container: {
+    borderColor: 'black',
     flex: 1,
     backgroundColor: 'white',
   },
@@ -34,6 +41,5 @@ const styles = StyleSheet.create({
     color: 'blue',
     fontSize: 20,
     margin: 20,
-  }
- 
+  },
 });
