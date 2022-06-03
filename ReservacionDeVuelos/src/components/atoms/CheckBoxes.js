@@ -3,7 +3,8 @@ import {View, Text, StyleSheet} from 'react-native';
 
 import {Checkbox} from 'react-native-paper';
 
-const Cbox = () => {
+const Cbox = props => {
+  const {text} = props;
   const [checked, setChecked] = useState(false);
   return (
     <View style={styles.container}>
@@ -13,7 +14,7 @@ const Cbox = () => {
           setChecked(!checked);
         }}
       />
-      <Text style={styles.text}>Terminos y condiciones</Text>
+      <Text style={styles.text}>{text}</Text>
     </View>
   );
 };
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
   },
   text: {
-    color: 'black',
-    margin: 5,
+    color: '#B0B0B0',
+    marginVertical: 8,
   },
 });
