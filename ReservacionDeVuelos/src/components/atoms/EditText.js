@@ -12,7 +12,6 @@ const EditTextS = ({
 }) => {
   const changeText = text => setValue(text);
   const [changeBorder, setChangeBorder] = useState(false);
-  const onLikePress = () => setChangeBorder(!changeBorder);
   return (
     <View style={styles.row}>
       <View style={styles.textContainer}>
@@ -24,7 +23,8 @@ const EditTextS = ({
             value={value}
             onChangeText={changeText}
             style={changeBorder ? styles.container : styles.textInput}
-            onPress={onLikePress}
+            onFocus={() => setChangeBorder(true)}
+            onBlur={() => setChangeBorder(false)}
           />
           {icon && (
             <Icon
@@ -45,6 +45,10 @@ const styles = StyleSheet.create({
   container: {
     borderColor: '#618DC9',
     borderWidth: 1,
+    fontSize: 16,
+    height: 40,
+    backgroundColor: '#FFFFFF',
+    padding: 10,
   },
   row: {
     flexDirection: 'row',
