@@ -3,12 +3,10 @@ import {View, Text, StyleSheet} from 'react-native';
 import Button from '../components/atoms/Button';
 import EditText from '../components/atoms/EditText';
 import Checkbox from '../components/atoms/CheckBoxes';
-import {useNavigation} from '@react-navigation/native';
 
 export const SignUp = ({navigation}) => {
   const [Password, setPassword] = useState('');
   const [ShowPassword, setShowPassword] = useState(false);
-  const navigationD = useNavigation();
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Sign Up</Text>
@@ -22,13 +20,15 @@ export const SignUp = ({navigation}) => {
         icon={ShowPassword ? 'eye' : 'eye-off'}
         onIconclick={() => setShowPassword(!ShowPassword)}
       />
-      <Checkbox />
-      <Checkbox />
+      <Checkbox text="I agree to the Terms and privacy Policy.*" />
+      <Checkbox text="Subscribe for select product updates." />
       <Button
+        text="Sign Up"
         onPress={() => {
           navigation.navigate('Login');
         }}
       />
+      <Button text="Sign Up with Google" />
     </View>
   );
 };

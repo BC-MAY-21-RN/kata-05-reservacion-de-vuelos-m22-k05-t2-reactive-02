@@ -65,14 +65,15 @@ const styles = StyleSheet.create({
 
   textContainer: {
     flex: 1,
-    margin: 20,
+    marginHorizontal: 20,
+    marginBottom: 12,
   },
 
   textLabel: {
     fontSize: 16,
-    fontWeight: 'bold',
     fontFamily: 'Roboto',
     color: '#566573',
+    marginBottom: 7,
   },
 
   iconEye: {

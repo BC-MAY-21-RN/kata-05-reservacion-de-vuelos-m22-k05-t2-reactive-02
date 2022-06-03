@@ -10,7 +10,6 @@ export const Login = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Login</Text>
-      <EditText label="First Name" />
       <EditText label="Email*" />
       <EditText
         label="Password*"
@@ -20,9 +19,9 @@ export const Login = () => {
         icon={ShowPassword ? 'eye' : 'eye-off'}
         onIconclick={() => setShowPassword(!ShowPassword)}
       />
-      <Checkbox />
-      <Checkbox />
-      <Button />
+      <Checkbox text="I agree to the Terms and privacy Policy.*" />
+      <Checkbox text="Subscribe for select product updates." />
+      <Button text="Log in" />
     </View>
   );
 };
@@ -38,6 +37,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'blue',
+    fontWeight: 'bold',
     fontSize: 20,
     margin: 20,
   },
