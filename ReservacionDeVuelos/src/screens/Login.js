@@ -4,7 +4,7 @@ import Button from '../components/atoms/Button';
 import EditText from '../components/atoms/EditText';
 import Checkbox from '../components/atoms/CheckBoxes';
 
-export const Login = () => {
+export const Login = ({navigation}) => {
   const [Password, setPassword] = useState('');
   const [ShowPassword, setShowPassword] = useState(false);
   return (
@@ -21,7 +21,12 @@ export const Login = () => {
       />
       <Checkbox text="I agree to the Terms and privacy Policy.*" />
       <Checkbox text="Subscribe for select product updates." />
-      <Button text="Log in" />
+      <Button
+        text="Log in"
+        onPress={() => {
+          navigation.navigate('Flights');
+        }}
+      />
     </View>
   );
 };
