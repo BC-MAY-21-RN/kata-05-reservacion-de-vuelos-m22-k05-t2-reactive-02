@@ -1,7 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
 import Countries from '../atoms/Countries';
-import FlightDetails from '../atoms/FlightDetails';
+import FlightDetails from '../atoms/FlighDetails';
 
 const CardFlight = () => {
   return (
