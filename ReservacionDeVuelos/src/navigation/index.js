@@ -3,20 +3,33 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 import UserContext from '../context/UserContext.js';
 import auth from '@react-native-firebase/auth';
+import BackSVG from '../assets/icons/back.svg';
 
 import RegisterScreen from '../screens/RegisterScreen';
 import LoginScreen from '../screens/LoginScreen';
 import FlightsScreen from '../screens/FlightsScreen';
+import PassengerScreen from '../screens/PassengerScreen/index.js';
 
 const Stack = createNativeStackNavigator();
 
 const StackLoged = [
-  {name: 'Flights', component: FlightsScreen, title: 'Flights'},
+  {name: 'Flights', component: FlightsScreen, title: 'Flights', shown: false},
+  {
+    name: 'Passenger',
+    component: PassengerScreen,
+    title: 'Passenger',
+    shown: true,
+  },
 ];
 
 const StackNoLoged = [
-  {name: 'Register', component: RegisterScreen, title: 'Register'},
-  {name: 'Login', component: LoginScreen, title: 'Login'},
+  {
+    name: 'Register',
+    component: RegisterScreen,
+    title: 'Register',
+    shown: false,
+  },
+  {name: 'Login', component: LoginScreen, title: 'Login', shown: false},
 ];
 
 const typeStack = user => {
@@ -40,7 +53,10 @@ export default function Navigation() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}>
         {typeStack(user).map((item, index) => (
           <Stack.Screen
             key={index}
