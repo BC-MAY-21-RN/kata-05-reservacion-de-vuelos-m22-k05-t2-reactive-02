@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, Dimensions} from 'react-native';
 import BackSVG from '../../assets/icons/back.svg';
 import AirPlaneSVG from '../../assets/icons/airplane.svg';
+import ScrollComponent from '../../components/atoms/ScrollComponent';
 
 const item = {
   from: {
@@ -86,6 +87,12 @@ const TextsComponent = ({title, subtitle, isleft}) => {
 };
 
 export default function PassengerScreen({navigation}) {
+  const [scroll, setScroll] = useState(0);
+  const [number, setnumber] = useState(1);
+
+  const changeNumber = num => setnumber(num);
+  const changeScroll = num => setScroll(num);
+
   return (
     <View>
       <BackButton navigation={navigation} />
@@ -99,6 +106,12 @@ export default function PassengerScreen({navigation}) {
         }}>
         How many passengers?
       </Text>
+      <ScrollComponent
+        changeNumber={changeNumber}
+        changeScroll={changeScroll}
+        scroll={scroll}
+        number={number}
+      />
     </View>
   );
 }
