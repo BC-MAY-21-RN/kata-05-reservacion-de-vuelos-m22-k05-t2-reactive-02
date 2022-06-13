@@ -7,11 +7,13 @@ import auth from '@react-native-firebase/auth';
 import RegisterScreen from '../screens/RegisterScreen';
 import LoginScreen from '../screens/LoginScreen';
 import FlightsScreen from '../screens/FlightsScreen';
+import FromScreen from '../screens/FromScreen/index.js';
 
 const Stack = createNativeStackNavigator();
 
 const StackLoged = [
   {name: 'Flights', component: FlightsScreen, title: 'Flights'},
+  {name: 'From', component: FromScreen, title: 'From'},
 ];
 
 const StackNoLoged = [
