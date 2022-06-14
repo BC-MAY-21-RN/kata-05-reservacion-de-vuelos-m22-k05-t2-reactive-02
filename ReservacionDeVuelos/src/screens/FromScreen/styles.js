@@ -1,8 +1,9 @@
 import {StyleSheet} from 'react-native';
+import colors from '../../consts/colors';
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: 'gray',
+    backgroundColor: colors.inactive,
     width: 315,
     height: 45,
     position: 'absolute',
