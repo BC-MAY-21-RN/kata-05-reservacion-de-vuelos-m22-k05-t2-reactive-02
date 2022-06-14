@@ -3,6 +3,7 @@ import {View, Text, TouchableOpacity, Dimensions} from 'react-native';
 import BackSVG from '../../assets/icons/back.svg';
 import AirPlaneSVG from '../../assets/icons/airplane.svg';
 import ScrollComponent from '../../components/atoms/ScrollComponent';
+import styles from './styles';
 
 const item = {
   from: {
@@ -86,6 +87,26 @@ const TextsComponent = ({title, subtitle, isleft}) => {
   );
 };
 
+const BottomButton = () => {
+  return (
+    <TouchableOpacity
+      style={{
+        backgroundColor: '#5C6DF8',
+        borderRadius: 10,
+        height: 45,
+        width: Dimensions.get('screen').width - 60,
+        position: 'absolute',
+        alignItems: 'center',
+        alignContent: 'center',
+        alignSelf: 'center',
+        bottom: 45,
+        justifyContent: 'center',
+      }}>
+      <Text style={{color: '#ffffff', fontSize: 18}}>Finish</Text>
+    </TouchableOpacity>
+  );
+};
+
 export default function PassengerScreen({navigation}) {
   const [scroll, setScroll] = useState(0);
   const [number, setnumber] = useState(1);
@@ -94,24 +115,17 @@ export default function PassengerScreen({navigation}) {
   const changeScroll = num => setScroll(num);
 
   return (
-    <View>
+    <View style={{height: '100%', width: '100%'}}>
       <BackButton navigation={navigation} />
       <TopInfoBar item={item} />
-      <Text
-        style={{
-          marginLeft: 30,
-          fontSize: 32,
-          color: '#131415',
-          marginTop: 29,
-        }}>
-        How many passengers?
-      </Text>
+      <Text style={styles.text}>How many passengers?</Text>
       <ScrollComponent
         changeNumber={changeNumber}
         changeScroll={changeScroll}
         scroll={scroll}
         number={number}
       />
+      <BottomButton />
     </View>
   );
 }
