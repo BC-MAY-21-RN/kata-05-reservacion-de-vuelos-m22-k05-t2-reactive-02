@@ -3,6 +3,7 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import {Calendar, CalendarList} from 'react-native-calendars';
 import Countries from '../../components/atoms/Countries';
 import styles from './styles';
+import colors from '../../consts/colors';
 
 export default function LoginScreen({navigation}) {
   let date = new Date();
@@ -39,7 +40,13 @@ export default function LoginScreen({navigation}) {
         />
       </View>
       <TouchableOpacity
-        style={styles.button}
+        style={{
+          ...styles.button,
+          ...(flag
+            ? {backgroundColor: colors.bluetitle}
+            : {backgroundColor: colors.inactive}),
+        }}
+        disabled={!flag}
         onPress={() => navigation.navigate('Flights')}>
         <Text>Next</Text>
       </TouchableOpacity>
