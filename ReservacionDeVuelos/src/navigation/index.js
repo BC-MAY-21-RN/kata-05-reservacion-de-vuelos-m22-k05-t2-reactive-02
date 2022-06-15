@@ -9,17 +9,19 @@ import RegisterScreen from '../screens/RegisterScreen';
 import LoginScreen from '../screens/LoginScreen';
 import FlightsScreen from '../screens/FlightsScreen';
 import PassengerScreen from '../screens/PassengerScreen/index.js';
+import DateScreen from '../screens/DateScreen';
 
 const Stack = createNativeStackNavigator();
 
 const StackLoged = [
-  {name: 'Flights', component: FlightsScreen, title: 'Flights', shown: false},
   {
     name: 'Passenger',
     component: PassengerScreen,
     title: 'Passenger',
     shown: true,
   },
+  {name: 'Flights', component: FlightsScreen, title: 'Flights'},
+  {name: 'DateScreen', component: DateScreen, title: 'DateScreen'},
 ];
 
 const StackNoLoged = [
