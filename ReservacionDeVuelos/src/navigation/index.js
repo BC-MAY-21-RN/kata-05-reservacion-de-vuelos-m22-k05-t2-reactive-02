@@ -8,8 +8,10 @@ import BackSVG from '../assets/icons/back.svg';
 import RegisterScreen from '../screens/RegisterScreen';
 import LoginScreen from '../screens/LoginScreen';
 import FlightsScreen from '../screens/FlightsScreen';
+import FromScreen from '../screens/FromScreen/index.js';
 import PassengerScreen from '../screens/PassengerScreen/index.js';
 import DateScreen from '../screens/DateScreen';
+import ToScreen from '../screens/ToScreen/index.js';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,7 +23,9 @@ const StackLoged = [
     shown: true,
   },
   {name: 'Flights', component: FlightsScreen, title: 'Flights'},
+  {name: 'From', component: FromScreen, title: 'From'},
   {name: 'DateScreen', component: DateScreen, title: 'DateScreen'},
+  {name: 'ToScreen', component: ToScreen, title: 'ToScreen'},
 ];
 
 const StackNoLoged = [
