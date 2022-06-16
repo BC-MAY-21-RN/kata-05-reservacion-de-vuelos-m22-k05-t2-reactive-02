@@ -7,7 +7,6 @@ import colors from '../../consts/colors';
 import BackButton from '../../components/atoms/BackButton';
 
 const FinishScreen = ({navigation, route}) => {
-  console.log(route.params);
   const [changeStyle, setChangeStyle] = useState(true);
   return (
     <View>

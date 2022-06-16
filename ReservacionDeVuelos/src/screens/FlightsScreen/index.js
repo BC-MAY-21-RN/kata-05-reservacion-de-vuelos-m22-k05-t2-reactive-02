@@ -16,7 +16,7 @@ const flights = [
 const salir = () => {
   auth()
     .signOut()
-    .then(() => console.log('User signed out!'));
+    .then(() => {});
 };
 
 export default function FlightsScreen({navigation}) {

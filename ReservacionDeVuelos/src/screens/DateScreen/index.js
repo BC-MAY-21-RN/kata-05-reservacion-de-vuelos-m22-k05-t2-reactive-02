@@ -28,7 +28,6 @@ export default function DateScreen({navigation, route}) {
             let daymarked = day;
             setDayMark(daymarked.dateString);
             setFlag(true);
-            console.log(dayMark);
           }}
           markedDates={
             !flag
