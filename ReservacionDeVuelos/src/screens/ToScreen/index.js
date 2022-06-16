@@ -5,6 +5,7 @@ import TextIndicator from '../../components/atoms/TextIndicator';
 import Countries from '../../components/atoms/Countries';
 import colors from '../../consts/colors';
 import styles from './styles';
+import BackButton from '../../components/atoms/BackButton';
 
 const ToScreen = ({navigation}) => {
   const [changeStyle, setChangeStyle] = useState(false);
@@ -18,6 +19,7 @@ const ToScreen = ({navigation}) => {
   }
   return (
     <View>
+      <BackButton navigation={navigation} />
       <Countries />
       <View style={styles.margin}>
         <TextIndicator text={'Where will you be flying to?'} />

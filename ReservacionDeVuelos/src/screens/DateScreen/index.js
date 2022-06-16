@@ -5,14 +5,16 @@ import Countries from '../../components/atoms/Countries';
 import styles from './styles';
 import colors from '../../consts/colors';
 import TextIndicator from '../../components/atoms/TextIndicator';
+import BackButton from '../../components/atoms/BackButton';
 
-export default function LoginScreen({navigation}) {
+export default function DateScreen({navigation}) {
   let date = new Date();
   let mindate = date.toISOString().split('T')[0];
   const [dayMark, setDayMark] = useState(mindate);
   const [flag, setFlag] = useState(false);
   return (
     <View style={styles.background}>
+      <BackButton navigation={navigation} />
       <Countries />
       <View style={styles.margin}>
         <TextIndicator text={'Select Date'} />

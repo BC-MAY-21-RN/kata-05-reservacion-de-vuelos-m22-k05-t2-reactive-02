@@ -4,6 +4,7 @@ import RNPickerSelect from 'react-native-picker-select';
 import TextIndicator from '../../components/atoms/TextIndicator';
 import colors from '../../consts/colors';
 import styles from './styles';
+import BackButton from '../../components/atoms/BackButton';
 
 const FromScreen = ({navigation}) => {
   const [changeStyle, setChangeStyle] = useState(false);
@@ -19,6 +20,7 @@ const FromScreen = ({navigation}) => {
   }
   return (
     <View>
+      <BackButton navigation={navigation} />
       <View style={styles.margin}>
         <TextIndicator text={'Where are you now?'} />
       </View>

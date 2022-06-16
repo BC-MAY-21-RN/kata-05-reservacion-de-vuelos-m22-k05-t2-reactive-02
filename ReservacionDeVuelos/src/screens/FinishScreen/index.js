@@ -4,11 +4,13 @@ import CardFlight from '../../components/molecules/CardFlight';
 import TextIndicator from '../../components/atoms/TextIndicator';
 import styles from '../FromScreen/styles';
 import colors from '../../consts/colors';
+import BackButton from '../../components/atoms/BackButton';
 
 const FinishScreen = ({navigation}) => {
   const [changeStyle, setChangeStyle] = useState(true);
   return (
     <View>
+      <BackButton navigation={navigation} />
       <CardFlight />
       <View style={styles.margin}>
         <TextIndicator text="Your Request was Received" />
