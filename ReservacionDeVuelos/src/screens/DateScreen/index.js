@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
-import {Calendar, CalendarList} from 'react-native-calendars';
+import {Calendar} from 'react-native-calendars';
 import Countries from '../../components/atoms/Countries';
 import styles from './styles';
 import colors from '../../consts/colors';
