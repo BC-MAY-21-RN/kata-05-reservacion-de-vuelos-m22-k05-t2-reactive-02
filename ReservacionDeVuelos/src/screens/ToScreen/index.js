@@ -19,7 +19,9 @@ const ToScreen = ({navigation}) => {
   return (
     <View>
       <Countries />
-      <TextIndicator text={'Where will you be flying to?'} />
+      <View style={styles.margin}>
+        <TextIndicator text={'Where will you be flying to?'} />
+      </View>
       <View style={styles.containerList}>
         <SafeAreaView style={styles.container}>
           <RNPickerSelect
@@ -43,7 +45,7 @@ const ToScreen = ({navigation}) => {
             : {backgroundColor: 'gray'}),
         }}
         disabled={!changeStyle}
-        onPress={() => navigation.navigate('Flights')}>
+        onPress={() => navigation.navigate('DateScreen')}>
         <Text style={styles.textButton}>Next</Text>
       </TouchableOpacity>
     </View>

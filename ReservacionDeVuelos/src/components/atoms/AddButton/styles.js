@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import colors from '../../consts/colors';
+import colors from '../../../consts/colors';
 
 const styles = StyleSheet.create({
   containerButton: {

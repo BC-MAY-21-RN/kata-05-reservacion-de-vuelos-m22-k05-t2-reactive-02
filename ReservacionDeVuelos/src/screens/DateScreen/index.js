@@ -4,6 +4,7 @@ import {Calendar, CalendarList} from 'react-native-calendars';
 import Countries from '../../components/atoms/Countries';
 import styles from './styles';
 import colors from '../../consts/colors';
+import TextIndicator from '../../components/atoms/TextIndicator';
 
 export default function LoginScreen({navigation}) {
   let date = new Date();
@@ -13,8 +14,10 @@ export default function LoginScreen({navigation}) {
   return (
     <View style={styles.background}>
       <Countries />
+      <View style={styles.margin}>
+        <TextIndicator text={'Select Date'} />
+      </View>
       <View style={styles.container}>
-        <Text style={styles.title}>Select date</Text>
         <Calendar
           minDate={mindate}
           disableAllTouchEventsForDisabledDays={true}
@@ -47,7 +50,7 @@ export default function LoginScreen({navigation}) {
             : {backgroundColor: colors.inactive}),
         }}
         disabled={!flag}
-        onPress={() => navigation.navigate('Flights')}>
+        onPress={() => navigation.navigate('Passenger')}>
         <Text>Next</Text>
       </TouchableOpacity>
     </View>

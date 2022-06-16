@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import AirPlaneSVG from '../../assets/icons/airplane.svg';
+import AirPlaneSVG from '../../../assets/icons/airplane.svg';
 import styles from './styles';
 
 const TextsComponent = ({title, subtitle, isleft}) => {

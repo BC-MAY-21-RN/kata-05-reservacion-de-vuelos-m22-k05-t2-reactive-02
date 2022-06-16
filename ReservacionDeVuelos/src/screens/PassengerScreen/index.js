@@ -5,6 +5,7 @@ import ScrollComponent from '../../components/atoms/ScrollComponent';
 import BottomButton from '../../components/atoms/BottomButton';
 import TopInfoBar from '../../components/atoms/TopInfoBar';
 import styles from './styles';
+import TextIndicator from '../../components/atoms/TextIndicator';
 
 const item = {
   from: {
@@ -29,14 +30,16 @@ export default function PassengerScreen({navigation}) {
     <View style={styles.container}>
       <BackButton navigation={navigation} />
       <TopInfoBar item={item} />
-      <Text style={styles.text}>How many passengers?</Text>
+      <View style={styles.margin}>
+        <TextIndicator text="How many passengers?" />
+      </View>
       <ScrollComponent
         changeNumber={changeNumber}
         changeScroll={changeScroll}
         scroll={scroll}
         number={number}
       />
-      <BottomButton />
+      <BottomButton navigation={navigation} />
     </View>
   );
 }

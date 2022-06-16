@@ -8,6 +8,10 @@ const styles = StyleSheet.create({
     color: '#131415',
     marginTop: 29,
   },
+  margin: {
+    marginTop: 30,
+    marginBottom: 10,
+  },
 });
 
 export default styles;

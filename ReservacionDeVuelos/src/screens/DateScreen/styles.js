@@ -2,13 +2,6 @@ import {StyleSheet, Dimensions} from 'react-native';
 import colors from '../../consts/colors';
 
 const styles = StyleSheet.create({
-  title: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    color: 'black',
-    marginTop: 30,
-    marginBottom: 15,
-  },
   container: {
     marginHorizontal: 25,
   },
@@ -25,6 +18,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     top: 100,
+  },
+  margin: {
+    marginTop: 30,
+    marginBottom: 10,
   },
 });
 

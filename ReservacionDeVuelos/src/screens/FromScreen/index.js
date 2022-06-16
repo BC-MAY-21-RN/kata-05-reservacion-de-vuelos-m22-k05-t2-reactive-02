@@ -19,7 +19,9 @@ const FromScreen = ({navigation}) => {
   }
   return (
     <View>
-      <TextIndicator text={'Where are you now?'} />
+      <View style={styles.margin}>
+        <TextIndicator text={'Where are you now?'} />
+      </View>
       <View style={styles.containerList}>
         <SafeAreaView style={styles.container}>
           <RNPickerSelect
@@ -43,7 +45,7 @@ const FromScreen = ({navigation}) => {
             : {backgroundColor: 'gray'}),
         }}
         disabled={!changeStyle}
-        onPress={() => navigation.navigate('Flights')}>
+        onPress={() => navigation.navigate('ToScreen')}>
         <Text style={styles.textButton}>Next</Text>
       </TouchableOpacity>
     </View>
