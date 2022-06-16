@@ -7,8 +7,8 @@ import colors from '../../consts/colors';
 import TextIndicator from '../../components/atoms/TextIndicator';
 import BackButton from '../../components/atoms/BackButton';
 
-export default function DateScreen({navigation}, route) {
-  console.log(route, 'datescreen');
+export default function DateScreen({navigation, route}) {
+  const values = route.params;
   let date = new Date();
   let mindate = date.toISOString().split('T')[0];
   const [dayMark, setDayMark] = useState(mindate);
@@ -16,7 +16,7 @@ export default function DateScreen({navigation}, route) {
   return (
     <View style={styles.background}>
       <BackButton navigation={navigation} />
-      <Countries />
+      <Countries values={route.params} />
       <View style={styles.margin}>
         <TextIndicator text={'Select Date'} />
       </View>
@@ -53,7 +53,13 @@ export default function DateScreen({navigation}, route) {
             : {backgroundColor: colors.inactive}),
         }}
         disabled={!flag}
-        onPress={() => navigation.navigate('Passenger')}>
+        onPress={() =>
+          navigation.navigate('Passenger', {
+            from: values.from,
+            to: values.to,
+            date: dayMark,
+          })
+        }>
         <Text>Next</Text>
       </TouchableOpacity>
     </View>

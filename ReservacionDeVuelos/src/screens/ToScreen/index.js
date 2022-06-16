@@ -17,11 +17,12 @@ const arrayItems = [
 
 const ToScreen = ({navigation, route}) => {
   const [to, setTo] = useState(null);
-  const from = route.params.from;
+  const values = route.params;
 
   return (
     <View>
       <BackButton navigation={navigation} />
+      <Countries values={values} />
       <View style={styles.margin}>
         <TextIndicator text={'Where will you be flying to?'} />
       </View>
@@ -43,8 +44,7 @@ const ToScreen = ({navigation, route}) => {
         }}
         disabled={!(to != null)}
         onPress={() => {
-          //console.log(to, from);
-          navigation.navigate('DateScreen', {to: 'a'});
+          navigation.navigate('DateScreen', {to: to, from: values.from});
         }}>
         <Text style={styles.textButton}>Next</Text>
       </TouchableOpacity>
