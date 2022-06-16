@@ -7,7 +7,8 @@ import colors from '../../consts/colors';
 import TextIndicator from '../../components/atoms/TextIndicator';
 import BackButton from '../../components/atoms/BackButton';
 
-export default function DateScreen({navigation}) {
+export default function DateScreen({navigation}, route) {
+  console.log(route, 'datescreen');
   let date = new Date();
   let mindate = date.toISOString().split('T')[0];
   const [dayMark, setDayMark] = useState(mindate);
