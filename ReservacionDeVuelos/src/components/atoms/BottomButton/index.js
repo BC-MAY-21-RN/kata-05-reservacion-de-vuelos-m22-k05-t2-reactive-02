@@ -4,8 +4,10 @@ import styles from './styles';
 
 export default function BottomButton({navigation}) {
   return (
-    <TouchableOpacity style={styles.containerButton}>
-      <Text style={styles.textButton}>Finish</Text>
+    <TouchableOpacity
+      style={styles.containerButton}
+      onPress={() => navigation.navigate('FinishScreen')}>
+      <Text style={styles.textButton}>Next</Text>
     </TouchableOpacity>
   );
 }
