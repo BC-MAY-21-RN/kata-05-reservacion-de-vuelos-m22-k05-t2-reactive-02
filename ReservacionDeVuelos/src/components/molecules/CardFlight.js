@@ -3,11 +3,11 @@ import {View} from 'react-native';
 import Countries from '../atoms/Countries';
 import FlightDetails from '../atoms/FlighDetails';
 
-const CardFlight = () => {
+const CardFlight = ({valueFlight}) => {
   return (
     <View>
-      <Countries />
-      <FlightDetails />
+      <Countries values={valueFlight} />
+      <FlightDetails values={valueFlight} />
     </View>
   );
 };
