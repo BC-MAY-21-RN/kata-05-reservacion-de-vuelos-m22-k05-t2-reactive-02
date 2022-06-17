@@ -24,22 +24,20 @@ const loginAccount = (email, password) => {
   auth()
     .signInWithEmailAndPassword(email, password)
     .then(() => {
-      console.log('User account created & signed in!');
+      // User account created & signed in!
     })
     .catch(error => {
       if (error.code === 'auth/email-already-in-use') {
-        console.log('That email address is already in use!');
+        // That email address is already in use!
       }
       if (error.code === 'auth/invalid-email') {
-        console.log('That email address is invalid!');
+        // That email address is invalid!
       }
-      console.error(error);
     });
 };
 
 function validate(password, mail, userName, changeAlert) {
   if (userName === undefined) {
-    console.log(password, mail);
     loginAccount(mail, password);
   } else {
     const regexpassword =

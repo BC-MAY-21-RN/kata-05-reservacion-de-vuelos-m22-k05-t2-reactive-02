@@ -10,7 +10,6 @@ export default function Buttons({buttonsActive, form, changeAlert}) {
     <View style={styles.container}>
       <TouchableOpacity
         onPress={() => {
-          console.log(typeof form);
           func.validate(form.input3, form.input2, form.input1, changeAlert);
         }}
         style={func.buttonstyle(buttonsActive)}>

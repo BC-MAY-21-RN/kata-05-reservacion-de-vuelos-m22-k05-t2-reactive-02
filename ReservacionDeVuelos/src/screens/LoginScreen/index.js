@@ -17,7 +17,6 @@ export default function LoginScreen({navigation}) {
   const changeForm = (value, key) => {
     form.setValues({[key]: value});
     setform(newObject(form));
-    console.log(form.getValues());
   };
 
   return (
