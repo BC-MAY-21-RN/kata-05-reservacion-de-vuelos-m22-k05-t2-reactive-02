@@ -9,9 +9,10 @@ export default function Buttons({buttonsActive, form, changeAlert}) {
   return (
     <View style={styles.container}>
       <TouchableOpacity
-        onPress={() =>
-          func.validate(form.input3, form.input2, form.input1, changeAlert)
-        }
+        onPress={() => {
+          console.log(typeof form);
+          func.validate(form.input3, form.input2, form.input1, changeAlert);
+        }}
         style={func.buttonstyle(buttonsActive)}>
         <Text style={styles.text}>{texts.register.button1}</Text>
       </TouchableOpacity>
