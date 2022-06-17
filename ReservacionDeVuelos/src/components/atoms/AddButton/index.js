@@ -6,7 +6,7 @@ export default function AddButton({navigation}) {
   return (
     <TouchableOpacity
       style={styles.containerButton}
-      onPress={() => navigation.navigate('Passenger')}>
+      onPress={() => navigation.navigate('From')}>
       <Text style={styles.textButton}>+</Text>
     </TouchableOpacity>
   );

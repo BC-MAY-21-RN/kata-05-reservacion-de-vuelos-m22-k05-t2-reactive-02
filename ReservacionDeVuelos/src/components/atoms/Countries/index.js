@@ -3,17 +3,17 @@ import {View, Text} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 
-const Countries = () => {
+const Countries = ({values}) => {
   return (
     <View style={styles.container}>
+      <Icon name="airplane" style={styles.plane} />
       <View style={styles.line}>
-        <Text style={styles.abbreviation}>BEG</Text>
-        <Icon name="airplane" style={styles.plane} />
-        <Text style={styles.abbreviation}>AMS</Text>
+        <Text style={styles.abbreviation}>{values.from?.title}</Text>
+        <Text style={styles.abbreviation}>{values.to?.title}</Text>
       </View>
       <View style={styles.line}>
-        <Text style={styles.country}>Serbia</Text>
-        <Text style={styles.country}>Netherlands</Text>
+        <Text style={styles.country}>{values.from?.subtitle}</Text>
+        <Text style={styles.country}>{values.to?.subtitle}</Text>
       </View>
     </View>
   );

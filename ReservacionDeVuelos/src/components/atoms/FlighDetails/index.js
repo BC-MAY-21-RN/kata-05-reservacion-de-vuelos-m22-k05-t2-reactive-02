@@ -1,12 +1,15 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text} from 'react-native';
 import styles from './styles';
 
-const FlightsDetails = () => {
+const FlightsDetails = ({values}) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.details}>September 3, 2020</Text>
-      <Text style={styles.details}>2 passangers</Text>
+      <Text style={styles.details}>{values.date}</Text>
+      <Text style={styles.details}>
+        {values.passengers}{' '}
+        {values.passengers === undefined ? '' : 'passangers'}
+      </Text>
     </View>
   );
 };

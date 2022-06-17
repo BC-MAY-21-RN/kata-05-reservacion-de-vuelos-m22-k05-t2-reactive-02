@@ -12,20 +12,22 @@ import FromScreen from '../screens/FromScreen/index.js';
 import PassengerScreen from '../screens/PassengerScreen/index.js';
 import DateScreen from '../screens/DateScreen';
 import ToScreen from '../screens/ToScreen/index.js';
+import FinishScreen from '../screens/FinishScreen/index.js';
 
 const Stack = createNativeStackNavigator();
 
 const StackLoged = [
+  {name: 'Flights', component: FlightsScreen, title: 'Flights'},
   {
     name: 'Passenger',
     component: PassengerScreen,
     title: 'Passenger',
     shown: true,
   },
-  {name: 'Flights', component: FlightsScreen, title: 'Flights'},
   {name: 'From', component: FromScreen, title: 'From'},
   {name: 'DateScreen', component: DateScreen, title: 'DateScreen'},
   {name: 'ToScreen', component: ToScreen, title: 'ToScreen'},
+  {name: 'FinishScreen', component: FinishScreen, title: 'FinishScreen'},
 ];
 
 const StackNoLoged = [

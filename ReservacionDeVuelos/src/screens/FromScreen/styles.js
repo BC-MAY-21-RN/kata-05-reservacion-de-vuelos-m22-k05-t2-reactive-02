@@ -22,6 +22,10 @@ const styles = StyleSheet.create({
     borderColor: 'gray',
     borderBottomWidth: 1,
   },
+  margin: {
+    marginTop: 150,
+    marginBottom: 50,
+  },
 });
 
 export default styles;

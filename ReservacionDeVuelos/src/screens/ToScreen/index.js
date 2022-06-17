@@ -5,48 +5,51 @@ import TextIndicator from '../../components/atoms/TextIndicator';
 import Countries from '../../components/atoms/Countries';
 import colors from '../../consts/colors';
 import styles from './styles';
+import BackButton from '../../components/atoms/BackButton';
 
-const ToScreen = ({navigation}) => {
-  const [changeStyle, setChangeStyle] = useState(false);
+const arrayItems = [
+  {label: 'Belgrade, Serbia', value: {subtitle: 'Serbia', title: 'BEG'}},
+  {label: 'Berlin, Germany', value: {subtitle: 'Germany', title: 'BEL'}},
+  {label: 'Oaxaca, México', value: {subtitle: 'México', title: 'OAX'}},
+  {label: 'Berlin, Germany', value: {subtitle: 'Germany', title: 'BEL'}},
+  {label: 'Oaxaca, México', value: {subtitle: 'México', title: 'OAX'}},
+];
 
-  function validate(data) {
-    if (data === false) {
-      return setChangeStyle(false);
-    } else {
-      return setChangeStyle(true);
-    }
-  }
+const ToScreen = ({navigation, route}) => {
+  const [to, setTo] = useState(null);
+  const values = route.params;
+
   return (
     <View>
-      <Countries />
-      <TextIndicator text={'Where will you be flying to?'} />
+      <BackButton navigation={navigation} />
+      <Countries values={values} />
+      <View style={styles.margin}>
+        <TextIndicator text={'Where will you be flying to?'} />
+      </View>
       <View style={styles.containerList}>
         <SafeAreaView style={styles.container}>
           <RNPickerSelect
-            placeholder={{label: 'Select location', value: false}}
-            onValueChange={value => validate(value)}
-            items={[
-              {label: 'Belgrade, Serbia', value: 'BEG'},
-              {label: 'Guadalajara, Jalisco', value: 'GDL'},
-              {label: 'Oaxaca, México', value: 'OAX'},
-              {label: 'Berlin, Germany', value: 'BEL'},
-              {label: 'San Luis Potosí, México', value: 'SLP'},
-            ]}
+            placeholder={{label: 'Select your destine', value: false}}
+            onValueChange={value => setTo(value)}
+            items={arrayItems}
           />
         </SafeAreaView>
       </View>
       <TouchableOpacity
         style={{
           ...styles.button,
-          ...(changeStyle
+          ...(to != null
             ? {backgroundColor: colors.bluetitle}
             : {backgroundColor: 'gray'}),
         }}
-        disabled={!changeStyle}
-        onPress={() => navigation.navigate('Flights')}>
+        disabled={!(to != null)}
+        onPress={() => {
+          navigation.navigate('DateScreen', {to: to, from: values.from});
+        }}>
         <Text style={styles.textButton}>Next</Text>
       </TouchableOpacity>
     </View>
   );
 };
+
 export default ToScreen;

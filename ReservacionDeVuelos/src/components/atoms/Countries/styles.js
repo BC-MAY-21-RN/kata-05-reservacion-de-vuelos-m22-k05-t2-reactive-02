@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -22,9 +22,11 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   plane: {
-    color: 'blue',
+    color: '#5C6DF8',
     fontSize: 25,
     marginTop: 15,
+    position: 'absolute',
+    alignSelf: 'center',
   },
   location: {
     fontSize: 10,
