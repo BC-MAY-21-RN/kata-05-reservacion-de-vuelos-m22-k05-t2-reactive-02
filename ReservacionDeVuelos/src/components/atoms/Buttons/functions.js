@@ -20,15 +20,35 @@ const createAccount = (email, password, userName) => {
     });
 };
 
+const loginAccount = (email, password) => {
+  auth()
+    .signInWithEmailAndPassword(email, password)
+    .then(() => {
+      // User account created & signed in!
+    })
+    .catch(error => {
+      if (error.code === 'auth/email-already-in-use') {
+        // That email address is already in use!
+      }
+      if (error.code === 'auth/invalid-email') {
+        // That email address is invalid!
+      }
+    });
+};
+
 function validate(password, mail, userName, changeAlert) {
-  const regexpassword =
-    /^(?=(?:.*\d){1})(?=(?:.*[A-Z]){1})(?=(?:.*[a-z]){1})(?=(?:.*[@$?+*-¿!#%&/()=¡\-_]){1})\S{8,16}$/;
-  const regexmail =
-    /^(?:[^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*|"[^\n"]+")@(?:[^<>()[\].,;:\s@"]+\.)+[^<>()[\]\.,;:\s@"]{2,63}$/i;
-  if (regexmail.test(mail) && regexpassword.test(password)) {
-    createAccount(mail, password, userName);
+  if (userName === undefined) {
+    loginAccount(mail, password);
   } else {
-    changeAlert(true);
+    const regexpassword =
+      /^(?=(?:.*\d){1})(?=(?:.*[A-Z]){1})(?=(?:.*[a-z]){1})(?=(?:.*[@$?+*-¿!#%&/()=¡\-_]){1})\S{8,16}$/;
+    const regexmail =
+      /^(?:[^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*|"[^\n"]+")@(?:[^<>()[\].,;:\s@"]+\.)+[^<>()[\]\.,;:\s@"]{2,63}$/i;
+    if (regexmail.test(mail) && regexpassword.test(password)) {
+      createAccount(mail, password, userName);
+    } else {
+      changeAlert(true);
+    }
   }
 }
 
