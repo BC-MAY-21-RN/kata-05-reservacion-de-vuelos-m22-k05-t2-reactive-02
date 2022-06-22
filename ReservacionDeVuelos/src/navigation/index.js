@@ -1,10 +1,9 @@
 import React, {useEffect} from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
-import UserContext from '../context/UserContext.js';
 import auth from '@react-native-firebase/auth';
-import BackSVG from '../assets/icons/back.svg';
 
+import UserContext from '../context/UserContext.js';
 import RegisterScreen from '../screens/RegisterScreen';
 import LoginScreen from '../screens/LoginScreen';
 import FlightsScreen from '../screens/FlightsScreen';
@@ -50,10 +49,7 @@ const typeStack = user => {
 
 export default function Navigation() {
   const {user, setUser} = React.useContext(UserContext);
-  function onAuthStateChanged(userInfo) {
-    setUser(userInfo);
-  }
-
+  const onAuthStateChanged = userInfo => setUser(userInfo);
   useEffect(() => {
     const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
     return subscriber;
