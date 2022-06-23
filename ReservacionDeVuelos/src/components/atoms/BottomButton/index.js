@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, TouchableOpacity} from 'react-native';
 import styles from './styles';
 
-export default function BottomButton({navigation, values}) {
+export default function BottomButton({navigation, values, screenName}) {
   return (
     <TouchableOpacity
       style={styles.containerButton}
