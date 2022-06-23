@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
-import {View, TouchableOpacity, Text, SafeAreaView} from 'react-native';
+import {View, SafeAreaView} from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import TextIndicator from '../../components/atoms/TextIndicator';
-import colors from '../../consts/colors';
 import styles from './styles';
 import BackButton from '../../components/atoms/BackButton';
+import BottomButton from '../../components/atoms/BottomButton';
+import functions from './functions';
+import globalstyles from '../../consts/globalstyles';
 
 const arrayItems = [
   {label: 'Belgrade, Serbia', value: {subtitle: 'Serbia', title: 'BEG'}},
@@ -14,15 +16,12 @@ const arrayItems = [
   {label: 'Oaxaca, México', value: {subtitle: 'México', title: 'OAX'}},
 ];
 
-const FromScreen = ({navigation}) => {
+export default function FromScreen({navigation}) {
   const [item, setItem] = useState(null);
-
   return (
-    <View>
+    <View style={globalstyles.screenContainer}>
       <BackButton navigation={navigation} />
-      <View style={styles.margin}>
-        <TextIndicator text={'Where are you now?'} />
-      </View>
+      <TextIndicator text={'Where are you now?'} style={styles.margin} />
       <View style={styles.containerList}>
         <SafeAreaView style={styles.container}>
           <RNPickerSelect
@@ -32,21 +31,13 @@ const FromScreen = ({navigation}) => {
           />
         </SafeAreaView>
       </View>
-      <TouchableOpacity
-        style={{
-          ...styles.button,
-          ...(item != null
-            ? {backgroundColor: colors.bluetitle}
-            : {backgroundColor: 'gray'}),
-        }}
-        disabled={!(item != null)}
-        onPress={() => {
-          navigation.navigate('ToScreen', {from: item});
-        }}>
-        <Text style={styles.textButton}>Next</Text>
-      </TouchableOpacity>
+      <BottomButton
+        screenName={'ToScreen'}
+        values={functions.nextValues(item)}
+        navigation={navigation}
+        text={'next'}
+        active={item !== null && item !== false}
+      />
     </View>
   );
-};
-
-export default FromScreen;
+}

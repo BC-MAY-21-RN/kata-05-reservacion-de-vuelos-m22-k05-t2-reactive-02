@@ -30,6 +30,7 @@ export default function PassengerScreen({navigation, route}) {
       <BottomButton
         navigation={navigation}
         values={{...values, ...{passengers: number}}}
+        screenName={'FinishScreen'}
       />
     </View>
   );

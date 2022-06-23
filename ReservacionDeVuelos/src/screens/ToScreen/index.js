@@ -15,6 +15,16 @@ const arrayItems = [
   {label: 'Oaxaca, México', value: {subtitle: 'México', title: 'OAX'}},
 ];
 
+/*
+        uid: user.user.uid,
+        avDestino: data.to.title,
+        avOrigen: data.from.title,
+        destino: data.to.subtitle,
+        fecha: data.date,
+        origen: data.from.subtitle,
+        passangers: data.passengers,
+*/
+
 const ToScreen = ({navigation, route}) => {
   const [to, setTo] = useState(null);
   const values = route.params;

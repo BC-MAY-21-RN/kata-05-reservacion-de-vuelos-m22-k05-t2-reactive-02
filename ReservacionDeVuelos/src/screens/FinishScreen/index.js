@@ -12,7 +12,7 @@ const FinishScreen = ({navigation, route}) => {
   const [changeStyle, setChangeStyle] = useState(true);
   const [addData, setAddData] = useState(true);
   const data = route.params.values;
-
+  console.log(data);
   const user = React.useContext(UserContext);
 
   if (addData === true) {

@@ -1,13 +1,26 @@
 import React from 'react';
 import {Text, TouchableOpacity} from 'react-native';
 import styles from './styles';
+import colors from '../../../consts/colors';
 
-export default function BottomButton({navigation, values, screenName}) {
+export default function BottomButton({
+  navigation,
+  values,
+  screenName,
+  active,
+  text,
+}) {
   return (
     <TouchableOpacity
-      style={styles.containerButton}
-      onPress={() => navigation.navigate('FinishScreen', {values})}>
-      <Text style={styles.textButton}>Next</Text>
+      disabled={!active}
+      style={{
+        ...styles.containerButton,
+        ...(active
+          ? {backgroundColor: colors.bluetitle}
+          : {backgroundColor: colors.inactive}),
+      }}
+      onPress={() => navigation.navigate(screenName, {values})}>
+      <Text style={styles.textButton}>{text}</Text>
     </TouchableOpacity>
   );
 }
