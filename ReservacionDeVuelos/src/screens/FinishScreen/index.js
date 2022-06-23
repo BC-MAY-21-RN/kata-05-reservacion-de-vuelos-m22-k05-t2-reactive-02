@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Text, View, TouchableOpacity} from 'react-native';
 import CardFlight from '../../components/molecules/CardFlight';
 import TextIndicator from '../../components/atoms/TextIndicator';
@@ -10,40 +10,42 @@ import UserContext from '../../context/UserContext';
 
 const FinishScreen = ({navigation, route}) => {
   const [changeStyle, setChangeStyle] = useState(true);
-  const [addData, setAddData] = useState(true);
+  const [addData, setAddData] = useState(false);
   const data = route.params.values;
 
   const user = React.useContext(UserContext);
 
-  if (addData === true) {
-    firestore()
-      .collection('flights')
-      .add({
-        uid: user.user.uid,
-        avDestino: data.to.title,
-        avOrigen: data.from.title,
-        destino: data.to.subtitle,
-        fecha: data.date,
-        origen: data.from.subtitle,
-        passangers: data.passengers,
-      })
-      .then(() => {
-        console.log('User added!');
-      })
-      .catch(function (error) {
-        console.log(
-          'There has been a problem with your fetch operation: ' +
-            error.message,
-        );
-        // ADD THIS THROW error
-        throw error;
-      });
-  }
-
+  useEffect(() => {
+    console.log(addData);
+    if (addData === true) {
+      firestore()
+        .collection('flights')
+        .add({
+          uid: user.user.uid,
+          avDestino: data.to.title,
+          avOrigen: data.from.title,
+          destino: data.to.subtitle,
+          fecha: data.date,
+          origen: data.from.subtitle,
+          passangers: data.passengers,
+        })
+        .then(() => {
+          console.log('Fligths added!');
+          navigation.navigate('Flights');
+        });
+    }
+  }, [addData, data, user, navigation]);
   return (
     <View>
       <BackButton navigation={navigation} />
-      <CardFlight valueFlight={route.params.values} />
+      <CardFlight
+        avOrigen={data.from.subtitle}
+        origen={data.from.title}
+        avDestino={data.to.subtitle}
+        destino={data.to.title}
+        fecha={data.date}
+        passengers={data.passengers}
+      />
       <View style={styles.margin}>
         <TextIndicator text="Your Request was Received" />
       </View>
@@ -55,7 +57,6 @@ const FinishScreen = ({navigation, route}) => {
             : {backgroundColor: 'gray'}),
         }}
         onPress={() => {
-          navigation.navigate('Flights');
           setAddData(true);
         }}>
         <Text style={styles.textButton}>Finish</Text>

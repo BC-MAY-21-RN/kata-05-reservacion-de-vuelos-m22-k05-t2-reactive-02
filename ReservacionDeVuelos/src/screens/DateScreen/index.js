@@ -16,7 +16,12 @@ export default function DateScreen({navigation, route}) {
   return (
     <View style={styles.background}>
       <BackButton navigation={navigation} />
-      <Countries values={route.params} />
+      <Countries
+        avOrigen={values.from.subtitle}
+        origen={values.from.title}
+        avDestino={values.to.subtitle}
+        destino={values.to.title}
+      />
       <View style={styles.margin}>
         <TextIndicator text={'Select Date'} />
       </View>

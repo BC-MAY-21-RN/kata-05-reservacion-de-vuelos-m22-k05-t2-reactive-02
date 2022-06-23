@@ -22,7 +22,14 @@ const salir = () => {
 export default function FlightsScreen({navigation}) {
   return (
     <View style={{height: '100%', width: '100%'}}>
-      <CardFlight valueFlight={flights[0]} />
+      <CardFlight
+        avDestino={flights[0].to.title}
+        avOrigen={flights[0].from.title}
+        destino={flights[0].to.subtitle}
+        origen={flights[0].from.subtitle}
+        fecha={flights[0].date}
+        passengers={flights[0].passengers}
+      />
       <TouchableOpacity onPress={() => salir()}>
         <Text>Salir</Text>
       </TouchableOpacity>

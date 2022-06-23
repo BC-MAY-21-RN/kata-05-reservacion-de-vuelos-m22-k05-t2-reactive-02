@@ -17,7 +17,13 @@ export default function PassengerScreen({navigation, route}) {
   return (
     <View style={styles.container}>
       <BackButton navigation={navigation} />
-      <CardFlight valueFlight={values} />
+      <CardFlight
+        avOrigen={values.from.subtitle}
+        origen={values.from.title}
+        avDestino={values.to.subtitle}
+        destino={values.to.title}
+        fecha={values.date}
+      />
       <View style={styles.margin}>
         <TextIndicator text="How many passengers?" />
       </View>
