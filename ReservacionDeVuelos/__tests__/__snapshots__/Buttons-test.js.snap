@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests Buttons component Buttons snapshot 1`] = `
+<View
+  style={
+    Object {
+      "marginTop": 30,
+    }
+  }
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#5C6DF8",
+        "borderRadius": 10,
+        "height": 40,
+        "justifyContent": "center",
+        "marginLeft": 30,
+        "opacity": 1,
+        "width": 690,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#ffffff",
+          "fontSize": 18,
+        }
+      }
+    >
+      Sign Up
+    </Text>
+  </View>
+  <Text
+    style={
+      Object {
+        "alignSelf": "center",
+        "color": "#3C404855",
+        "fontSize": 16,
+        "marginVertical": "1.23%",
+      }
+    }
+  >
+    Or
+  </Text>
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#5C6DF8",
+        "borderRadius": 10,
+        "height": 40,
+        "justifyContent": "center",
+        "marginLeft": 30,
+        "opacity": 1,
+        "width": 690,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#ffffff",
+          "fontSize": 18,
+        }
+      }
+    >
+      Sign Up with Google
+    </Text>
+    <View
+      style={
+        Object {
+          "left": 28,
+          "position": "absolute",
+        }
+      }
+    >
+      < />
+    </View>
+  </View>
+</View>
+`;

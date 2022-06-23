@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests Countries component Countries snapshot 1`] = `
+<View
+  style={
+    Object {
+      "borderBottomColor": "gray",
+      "borderBottomWidth": 1,
+      "marginHorizontal": 30,
+      "marginVertical": 10,
+    }
+  }
+>
+  <Text
+    allowFontScaling={false}
+    selectable={false}
+    style={
+      Array [
+        Object {
+          "color": undefined,
+          "fontSize": 12,
+        },
+        Object {
+          "alignSelf": "center",
+          "color": "#5C6DF8",
+          "fontSize": 25,
+          "marginTop": 15,
+          "position": "absolute",
+        },
+        Object {
+          "fontFamily": "Ionicons",
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+        },
+        Object {},
+      ]
+    }
+  >
+    
+  </Text>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "black",
+          "fontSize": 28,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      AWS
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "black",
+          "fontSize": 28,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      ML
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "gray",
+          "fontSize": 15,
+          "paddingVertical": 3,
+        }
+      }
+    >
+      Amazon web services
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "gray",
+          "fontSize": 15,
+          "paddingVertical": 3,
+        }
+      }
+    >
+      Mercado Libre
+    </Text>
+  </View>
+</View>
+`;
