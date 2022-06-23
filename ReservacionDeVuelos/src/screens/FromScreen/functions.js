@@ -1,7 +1,7 @@
 const nextValues = item => {
   return {
-    avOrigen: item?.from?.title,
-    origen: item?.from?.subtitle,
+    avOrigen: item?.title,
+    origen: item?.subtitle,
   };
 };
 

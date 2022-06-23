@@ -1,11 +1,14 @@
 import React, {useState} from 'react';
-import {View, TouchableOpacity, Text, SafeAreaView} from 'react-native';
+import {View, SafeAreaView} from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import TextIndicator from '../../components/atoms/TextIndicator';
 import Countries from '../../components/atoms/Countries';
-import colors from '../../consts/colors';
+import functions from './functions';
 import styles from './styles';
 import BackButton from '../../components/atoms/BackButton';
+import BottomButton from '../../components/atoms/BottomButton';
+import globalstyles from '../../consts/globalstyles';
+import texts from '../../consts/text';
 
 const arrayItems = [
   {label: 'Belgrade, Serbia', value: {subtitle: 'Serbia', title: 'BEG'}},
@@ -15,51 +18,27 @@ const arrayItems = [
   {label: 'Oaxaca, México', value: {subtitle: 'México', title: 'OAX'}},
 ];
 
-/*
-        uid: user.user.uid,
-        avDestino: data.to.title,
-        avOrigen: data.from.title,
-        destino: data.to.subtitle,
-        fecha: data.date,
-        origen: data.from.subtitle,
-        passangers: data.passengers,
-*/
-
-const ToScreen = ({navigation, route}) => {
+export default function ToScreen({navigation, route}) {
   const [to, setTo] = useState(null);
-  const values = route.params;
-
   return (
-    <View>
+    <View style={globalstyles.screenContainer}>
       <BackButton navigation={navigation} />
-      <Countries values={values} />
-      <View style={styles.margin}>
-        <TextIndicator text={'Where will you be flying to?'} />
-      </View>
-      <View style={styles.containerList}>
-        <SafeAreaView style={styles.container}>
-          <RNPickerSelect
-            placeholder={{label: 'Select your destine', value: false}}
-            onValueChange={value => setTo(value)}
-            items={arrayItems}
-          />
-        </SafeAreaView>
-      </View>
-      <TouchableOpacity
-        style={{
-          ...styles.button,
-          ...(to != null
-            ? {backgroundColor: colors.bluetitle}
-            : {backgroundColor: 'gray'}),
-        }}
-        disabled={!(to != null)}
-        onPress={() => {
-          navigation.navigate('DateScreen', {to: to, from: values.from});
-        }}>
-        <Text style={styles.textButton}>Next</Text>
-      </TouchableOpacity>
+      <Countries values={route.params} />
+      <TextIndicator text={texts.to.title} style={styles.margin} />
+      <SafeAreaView style={styles.container}>
+        <RNPickerSelect
+          placeholder={{label: 'Select your destine', value: false}}
+          onValueChange={value => setTo(value)}
+          items={arrayItems}
+        />
+      </SafeAreaView>
+      <BottomButton
+        screenName={'ToScreen'}
+        values={functions.nextValues(to, route.params)}
+        navigation={navigation}
+        text={'next'}
+        active={to !== null && to !== false}
+      />
     </View>
   );
-};
-
-export default ToScreen;
+}

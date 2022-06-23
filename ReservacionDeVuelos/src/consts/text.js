@@ -18,6 +18,9 @@ const texts = {
   login: {
     title: 'Login',
   },
+  to: {
+    title: 'Where will you be flying to?',
+  },
 };
 
 export default texts;
