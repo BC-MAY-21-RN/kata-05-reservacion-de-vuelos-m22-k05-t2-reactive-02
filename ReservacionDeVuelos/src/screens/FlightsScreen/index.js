@@ -1,20 +1,11 @@
 import React, {useCallback, useState} from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity, FlatList} from 'react-native';
 import CardFlight from '../../components/molecules/CardFlight';
 import auth from '@react-native-firebase/auth';
 import AddButton from '../../components/atoms/AddButton';
 import firestore from '@react-native-firebase/firestore';
 import UserContext from '../../context/UserContext';
 import {useFocusEffect} from '@react-navigation/native';
-
-const flights = [
-  {
-    from: {title: 'AWS', subtitle: 'Amazon web services'},
-    to: {title: 'ML', subtitle: 'Mercado Libre'},
-    date: '2022-06-16',
-    passengers: 5,
-  },
-];
 
 const salir = () => {
   auth()
@@ -24,21 +15,21 @@ const salir = () => {
 
 export default function FlightsScreen({navigation}) {
   const user = React.useContext(UserContext);
-  const [data, setData] = useState(false);
+  const [data, setData] = useState(true);
+  const [getData, setGetData] = useState([]);
 
   useFocusEffect(
     useCallback(() => {
       if (data === true) {
         firestore()
           .collection('flights')
-          // Filter results
           .where('uid', '==', user.user.uid)
-          .limit(10)
           .get()
           .then(querySnapshot => {
-            console.log('Total flights: ', querySnapshot.size);
+            var dataFlight = [];
             querySnapshot.forEach(documentSnapshot => {
-              console.log('flight data: ', documentSnapshot.data());
+              dataFlight.push(documentSnapshot.data());
+              setGetData(dataFlight);
             });
           });
       }
@@ -47,15 +38,21 @@ export default function FlightsScreen({navigation}) {
 
   return (
     <View style={{height: '100%', width: '100%'}}>
-      <CardFlight
-        avDestino={flights[0].to.title}
-        avOrigen={flights[0].from.title}
-        destino={flights[0].to.subtitle}
-        origen={flights[0].from.subtitle}
-        fecha={flights[0].date}
-        passengers={flights[0].passengers}
+      <FlatList
+        data={getData}
+        renderItem={({item}) => (
+          <CardFlight
+            avDestino={item.avDestino}
+            avOrigen={item.avOrigen}
+            destino={item.destino}
+            origen={item.origen}
+            fecha={item.fecha}
+            passengers={item.passangers}
+          />
+        )}
       />
-      <TouchableOpacity onPress={() => setData(true)}>
+
+      <TouchableOpacity onPress={() => salir()}>
         <Text>Salir</Text>
       </TouchableOpacity>
       <AddButton navigation={navigation} />
