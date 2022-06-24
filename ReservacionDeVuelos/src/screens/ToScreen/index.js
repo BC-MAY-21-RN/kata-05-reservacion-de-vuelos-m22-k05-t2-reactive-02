@@ -33,10 +33,9 @@ export default function ToScreen({navigation, route}) {
         />
       </SafeAreaView>
       <BottomButton
-        screenName={'ToScreen'}
+        screenName={'DateScreen'}
         values={functions.nextValues(to, route.params)}
         navigation={navigation}
-        text={'next'}
         active={to !== null && to !== false}
       />
     </View>

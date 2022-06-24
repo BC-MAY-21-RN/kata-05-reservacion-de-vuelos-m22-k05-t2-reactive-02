@@ -34,12 +34,14 @@ export default function DateScreen({navigation, route}) {
     <View style={styles.background}>
       <BackButton navigation={navigation} />
       <Countries values={route.params} />
-      <TextIndicator text={'Select Date'} />
+      <TextIndicator text={'Select Date'} style={styles.margin} />
       <SetDateComponent flag={flag} dayMark={dayMark} changeDay={changeDay} />
       <BottomButton
         navigation={navigation}
-        values={{...route.params, ...{date: dayMark}}}
+        values={{...route.params, ...{fecha: dayMark}}}
         screenName={'Passenger'}
+        active={flag}
+        text={'next'}
       />
     </View>
   );

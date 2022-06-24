@@ -10,6 +10,7 @@ export default function BottomButton({
   active,
   text,
 }) {
+  console.log(text);
   return (
     <TouchableOpacity
       disabled={!active}
@@ -20,7 +21,9 @@ export default function BottomButton({
           : {backgroundColor: colors.inactive}),
       }}
       onPress={() => navigation.navigate(screenName, {values})}>
-      <Text style={styles.textButton}>{text}</Text>
+      <Text style={styles.textButton}>
+        {text === undefined ? 'next' : text}
+      </Text>
     </TouchableOpacity>
   );
 }
