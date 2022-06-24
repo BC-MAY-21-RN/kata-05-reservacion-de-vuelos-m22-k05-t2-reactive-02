@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests TextIndicator component TextIndicator snapshot 1`] = `
+<View>
+  <Text
+    style={
+      Object {
+        "color": "black",
+        "fontSize": 32,
+        "fontWeight": "bold",
+        "marginHorizontal": 30,
+      }
+    }
+  >
+    
+  </Text>
+</View>
+`;

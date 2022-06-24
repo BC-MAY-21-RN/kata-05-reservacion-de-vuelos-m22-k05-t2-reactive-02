@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests Terms component Terms snapshot 1`] = `
+<View
+  style={
+    Object {
+      "height": 20.1,
+      "marginBottom": 10,
+      "marginLeft": 20,
+      "marginTop": 0,
+      "width": 710,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderColor": "#9CA5B4",
+          "borderWidth": 1,
+          "height": 20,
+          "justifyContent": "center",
+          "opacity": 1,
+          "width": 20,
+        }
+      }
+    />
+    <Text
+      style={
+        Object {
+          "color": "#9CA5B4",
+          "fontSize": 16,
+          "marginLeft": 10,
+        }
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;

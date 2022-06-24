@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests FlighDetails component FlighDetails snapshot 1`] = `
+<View
+  style={
+    Object {
+      "borderBottomColor": "gray",
+      "borderBottomWidth": 1,
+      "borderColor": "black",
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "marginHorizontal": 30,
+      "paddingBottom": 20,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "fontSize": 15,
+        "fontWeight": "bold",
+      }
+    }
+  >
+    2022-06-16
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 15,
+        "fontWeight": "bold",
+      }
+    }
+  >
+    5
+     
+    passangers
+  </Text>
+</View>
+`;

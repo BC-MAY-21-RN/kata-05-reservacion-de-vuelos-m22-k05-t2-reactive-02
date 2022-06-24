@@ -1,0 +1,491 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests ScrollComponent component ScrollComponent snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "marginTop": 60,
+      "width": 150,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "left": 0,
+        "position": "absolute",
+        "top": 26,
+      }
+    }
+  >
+    < />
+  </View>
+  <View
+    style={
+      Object {
+        "position": "absolute",
+        "right": 0,
+        "top": 26,
+      }
+    }
+  >
+    < />
+  </View>
+  <RCTScrollView
+    onScroll={[Function]}
+    showsVerticalScrollIndicator={false}
+    style={
+      Object {
+        "height": 135,
+        "width": 50,
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 30,
+            "width": 50,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#13141510",
+              "fontSize": 24,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 30,
+            "width": 50,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#13141555",
+              "fontSize": 24,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          1
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 30,
+            "width": 50,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#13141510",
+              "fontSize": 24,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          2
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 30,
+            "width": 50,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#13141510",
+              "fontSize": 24,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          3
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 30,
+            "width": 50,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#13141510",
+              "fontSize": 24,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          4
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 30,
+            "width": 50,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#13141510",
+              "fontSize": 24,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          5
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 30,
+            "width": 50,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#13141510",
+              "fontSize": 24,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          6
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 30,
+            "width": 50,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#13141510",
+              "fontSize": 24,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          7
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 30,
+            "width": 50,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#13141510",
+              "fontSize": 24,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          8
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 30,
+            "width": 50,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#13141510",
+              "fontSize": 24,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          9
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 30,
+            "width": 50,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#13141510",
+              "fontSize": 24,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          10
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 30,
+            "width": 50,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#13141510",
+              "fontSize": 24,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          11
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 30,
+            "width": 50,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#13141510",
+              "fontSize": 24,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          12
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 30,
+            "width": 50,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#13141510",
+              "fontSize": 24,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          13
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 30,
+            "width": 50,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#13141510",
+              "fontSize": 24,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          14
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 30,
+            "width": 50,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#13141510",
+              "fontSize": 24,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          15
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 30,
+            "width": 50,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#13141510",
+              "fontSize": 24,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          16
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 30,
+            "width": 50,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#13141510",
+              "fontSize": 24,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          17
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 30,
+            "width": 50,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#13141510",
+              "fontSize": 24,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 30,
+            "width": 50,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#13141510",
+              "fontSize": 24,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 30,
+            "width": 50,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#13141510",
+              "fontSize": 24,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;
