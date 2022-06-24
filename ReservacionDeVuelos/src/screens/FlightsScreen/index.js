@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useCallback, useState} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import CardFlight from '../../components/molecules/CardFlight';
 import auth from '@react-native-firebase/auth';
 import AddButton from '../../components/atoms/AddButton';
+import firestore from '@react-native-firebase/firestore';
+import UserContext from '../../context/UserContext';
+import {useFocusEffect} from '@react-navigation/native';
 
 const flights = [
   {
@@ -20,6 +23,28 @@ const salir = () => {
 };
 
 export default function FlightsScreen({navigation}) {
+  const user = React.useContext(UserContext);
+  const [data, setData] = useState(false);
+
+  useFocusEffect(
+    useCallback(() => {
+      if (data === true) {
+        firestore()
+          .collection('flights')
+          // Filter results
+          .where('uid', '==', user.user.uid)
+          .limit(10)
+          .get()
+          .then(querySnapshot => {
+            console.log('Total flights: ', querySnapshot.size);
+            querySnapshot.forEach(documentSnapshot => {
+              console.log('flight data: ', documentSnapshot.data());
+            });
+          });
+      }
+    }, [data, user]),
+  );
+
   return (
     <View style={{height: '100%', width: '100%'}}>
       <CardFlight
@@ -30,7 +55,7 @@ export default function FlightsScreen({navigation}) {
         fecha={flights[0].date}
         passengers={flights[0].passengers}
       />
-      <TouchableOpacity onPress={() => salir()}>
+      <TouchableOpacity onPress={() => setData(true)}>
         <Text>Salir</Text>
       </TouchableOpacity>
       <AddButton navigation={navigation} />
