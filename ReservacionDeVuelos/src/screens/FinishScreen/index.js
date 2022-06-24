@@ -30,7 +30,6 @@ const FinishScreen = ({navigation, route}) => {
           passangers: data.passengers,
         })
         .then(() => {
-          console.log('Fligths added!');
           navigation.navigate('Flights');
         });
     }
