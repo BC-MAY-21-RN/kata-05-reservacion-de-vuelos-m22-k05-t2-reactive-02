@@ -24,7 +24,7 @@ export default function ToScreen({navigation, route}) {
   return (
     <View style={globalstyles.screenContainer}>
       <BackButton navigation={navigation} />
-      <Countries values={route.params} />
+      <Countries data={route.params} />
       <TextIndicator text={texts.to.title} style={styles.margin} />
       <SafeAreaView style={styles.container}>
         <RNPickerSelect
