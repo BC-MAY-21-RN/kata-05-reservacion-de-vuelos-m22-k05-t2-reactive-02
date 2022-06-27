@@ -22,7 +22,7 @@ const ToScreen = ({navigation, route}) => {
   return (
     <View>
       <BackButton navigation={navigation} />
-      <Countries values={values} />
+      <Countries avOrigen={values.from.subtitle} origen={values.from.title} />
       <View style={styles.margin}>
         <TextIndicator text={'Where will you be flying to?'} />
       </View>
