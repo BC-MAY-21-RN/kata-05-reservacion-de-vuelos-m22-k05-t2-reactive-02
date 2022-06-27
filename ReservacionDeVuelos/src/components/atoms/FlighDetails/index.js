@@ -2,12 +2,12 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import styles from './styles';
 
-const FlightsDetails = ({fecha, passengers}) => {
+const FlightsDetails = ({data}) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.details}>{fecha}</Text>
+      <Text style={styles.details}>{data.fecha}</Text>
       <Text style={styles.details}>
-        {passengers} {passengers === undefined ? '' : 'passangers'}
+        {data.passengers} {data.passengers === undefined ? '' : 'passangers'}
       </Text>
     </View>
   );

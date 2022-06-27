@@ -41,18 +41,9 @@ export default function FlightsScreen({navigation}) {
     <View style={globalstyles.screenContainer}>
       <FlatList
         data={getData}
-        renderItem={({item}) => (
-          <CardFlight
-            avDestino={item.avDestino}
-            avOrigen={item.avOrigen}
-            destino={item.destino}
-            origen={item.origen}
-            fecha={item.fecha}
-            passengers={item.passangers}
-          />
-        )}
+        renderItem={({item}) => <CardFlight data={item} />}
       />
-      <TouchableOpacity onPress={() => salir()}>
+      <TouchableOpacity onPress={() => console.log(getData)}>
         <Text>Salir</Text>
       </TouchableOpacity>
       <AddButton navigation={navigation} />

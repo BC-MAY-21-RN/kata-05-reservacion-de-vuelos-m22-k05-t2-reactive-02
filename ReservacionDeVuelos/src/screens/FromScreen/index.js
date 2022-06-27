@@ -17,7 +17,7 @@ const arrayItems = [
 ];
 
 export default function FromScreen({navigation}) {
-  const [item, setItem] = useState(null);
+  const [item, setItem] = useState({});
   return (
     <View style={globalstyles.screenContainer}>
       <BackButton navigation={navigation} />

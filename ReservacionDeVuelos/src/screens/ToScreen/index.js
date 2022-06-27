@@ -19,11 +19,11 @@ const arrayItems = [
 ];
 
 export default function ToScreen({navigation, route}) {
-  const [to, setTo] = useState(null);
+  console.log(route.params);
+  const [to, setTo] = useState({});
   return (
     <View style={globalstyles.screenContainer}>
       <BackButton navigation={navigation} />
-<<<<<<< HEAD
       <Countries values={route.params} />
       <TextIndicator text={texts.to.title} style={styles.margin} />
       <SafeAreaView style={styles.container}>
@@ -39,7 +39,12 @@ export default function ToScreen({navigation, route}) {
         navigation={navigation}
         active={to !== null && to !== false}
       />
-=======
+    </View>
+  );
+}
+
+/*
+  =======
       <Countries avOrigen={values.from.subtitle} origen={values.from.title} />
       <View style={styles.margin}>
         <TextIndicator text={'Where will you be flying to?'} />
@@ -67,6 +72,4 @@ export default function ToScreen({navigation, route}) {
         <Text style={styles.textButton}>Next</Text>
       </TouchableOpacity>
 >>>>>>> master
-    </View>
-  );
-}
+*/
