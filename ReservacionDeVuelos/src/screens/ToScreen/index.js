@@ -23,6 +23,7 @@ export default function ToScreen({navigation, route}) {
   return (
     <View style={globalstyles.screenContainer}>
       <BackButton navigation={navigation} />
+<<<<<<< HEAD
       <Countries values={route.params} />
       <TextIndicator text={texts.to.title} style={styles.margin} />
       <SafeAreaView style={styles.container}>
@@ -38,6 +39,34 @@ export default function ToScreen({navigation, route}) {
         navigation={navigation}
         active={to !== null && to !== false}
       />
+=======
+      <Countries avOrigen={values.from.subtitle} origen={values.from.title} />
+      <View style={styles.margin}>
+        <TextIndicator text={'Where will you be flying to?'} />
+      </View>
+      <View style={styles.containerList}>
+        <SafeAreaView style={styles.container}>
+          <RNPickerSelect
+            placeholder={{label: 'Select your destine', value: false}}
+            onValueChange={value => setTo(value)}
+            items={arrayItems}
+          />
+        </SafeAreaView>
+      </View>
+      <TouchableOpacity
+        style={{
+          ...styles.button,
+          ...(to != null
+            ? {backgroundColor: colors.bluetitle}
+            : {backgroundColor: 'gray'}),
+        }}
+        disabled={!(to != null)}
+        onPress={() => {
+          navigation.navigate('DateScreen', {to: to, from: values.from});
+        }}>
+        <Text style={styles.textButton}>Next</Text>
+      </TouchableOpacity>
+>>>>>>> master
     </View>
   );
 }

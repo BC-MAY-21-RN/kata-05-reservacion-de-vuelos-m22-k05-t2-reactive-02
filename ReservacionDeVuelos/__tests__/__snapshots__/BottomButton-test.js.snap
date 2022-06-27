@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests BottomButton component BottomButton snapshot 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignContent": "center",
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#5C6DF8",
+      "borderRadius": 10,
+      "bottom": 45,
+      "height": 45,
+      "justifyContent": "center",
+      "opacity": 1,
+      "position": "absolute",
+      "width": 690,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#ffffff",
+        "fontSize": 18,
+      }
+    }
+  >
+    Next
+  </Text>
+</View>
+`;

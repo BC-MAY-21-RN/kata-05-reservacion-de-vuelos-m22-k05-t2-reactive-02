@@ -15,8 +15,21 @@ export default function PassengerScreen({navigation, route}) {
   return (
     <View style={styles.container}>
       <BackButton navigation={navigation} />
+<<<<<<< HEAD
       <CardFlight valueFlight={route.params} />
       <TextIndicator text="How many passengers?" style={styles.margin} />
+=======
+      <CardFlight
+        avOrigen={values.from.subtitle}
+        origen={values.from.title}
+        avDestino={values.to.subtitle}
+        destino={values.to.title}
+        fecha={values.date}
+      />
+      <View style={styles.margin}>
+        <TextIndicator text="How many passengers?" />
+      </View>
+>>>>>>> master
       <ScrollComponent
         changeNumber={changeNumber}
         changeScroll={changeScroll}
