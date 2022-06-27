@@ -8,7 +8,6 @@ import TextIndicator from '../../components/atoms/TextIndicator';
 import CardFlight from '../../components/molecules/CardFlight';
 
 export default function PassengerScreen({navigation, route}) {
-  console.log(route.params);
   const [scroll, setScroll] = useState(0);
   const [number, setnumber] = useState(1);
   const changeNumber = num => setnumber(num);
@@ -17,9 +16,7 @@ export default function PassengerScreen({navigation, route}) {
     <View style={styles.container}>
       <BackButton navigation={navigation} />
       <CardFlight data={route.params} />
-      <View style={styles.margin}>
-        <TextIndicator text="How many passengers?" />
-      </View>
+      <TextIndicator text="How many passengers?" style={styles.margin} />
       <ScrollComponent
         changeNumber={changeNumber}
         changeScroll={changeScroll}

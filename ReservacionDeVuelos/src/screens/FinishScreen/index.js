@@ -25,7 +25,7 @@ const addFlightFunction = (user, data, navigation) => {
     });
 };
 
-const FinishScreen = ({navigation, route}) => {
+export default function FinishScreen({navigation, route}) {
   const data = route.params;
   const user = React.useContext(UserContext);
 
@@ -48,6 +48,4 @@ const FinishScreen = ({navigation, route}) => {
       </TouchableOpacity>
     </View>
   );
-};
-
-export default FinishScreen;
+}

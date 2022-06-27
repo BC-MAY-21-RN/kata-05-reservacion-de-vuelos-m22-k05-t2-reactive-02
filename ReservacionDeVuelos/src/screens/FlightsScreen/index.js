@@ -14,27 +14,28 @@ const salir = () => {
     .then(() => {});
 };
 
+const firebaseDataConsult = (user, changeGetData) => {
+  firestore()
+    .collection('flights')
+    .where('uid', '==', user.user.uid)
+    .get()
+    .then(querySnapshot => {
+      var dataFlight = [];
+      querySnapshot.forEach(documentSnapshot => {
+        dataFlight.push(documentSnapshot.data());
+        changeGetData(dataFlight);
+      });
+    });
+};
+
 export default function FlightsScreen({navigation}) {
   const user = React.useContext(UserContext);
-  const [data, setData] = useState(true);
   const [getData, setGetData] = useState([]);
-
+  const changeGetData = flight => setGetData(flight);
   useFocusEffect(
     useCallback(() => {
-      if (data === true) {
-        firestore()
-          .collection('flights')
-          .where('uid', '==', user.user.uid)
-          .get()
-          .then(querySnapshot => {
-            var dataFlight = [];
-            querySnapshot.forEach(documentSnapshot => {
-              dataFlight.push(documentSnapshot.data());
-              setGetData(dataFlight);
-            });
-          });
-      }
-    }, [data, user]),
+      firebaseDataConsult(user, changeGetData);
+    }, [user]),
   );
 
   return (
@@ -43,7 +44,7 @@ export default function FlightsScreen({navigation}) {
         data={getData}
         renderItem={({item}) => <CardFlight data={item} />}
       />
-      <TouchableOpacity onPress={() => console.log(getData)}>
+      <TouchableOpacity onPress={() => salir()}>
         <Text>Salir</Text>
       </TouchableOpacity>
       <AddButton navigation={navigation} />

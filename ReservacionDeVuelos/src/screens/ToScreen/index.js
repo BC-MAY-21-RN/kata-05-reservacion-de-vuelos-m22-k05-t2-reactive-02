@@ -19,7 +19,6 @@ const arrayItems = [
 ];
 
 export default function ToScreen({navigation, route}) {
-  console.log(route.params);
   const [to, setTo] = useState({});
   return (
     <View style={globalstyles.screenContainer}>

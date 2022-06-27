@@ -23,7 +23,6 @@ const SetDateComponent = ({flag, dayMark, changeDay}) => {
 };
 
 export default function DateScreen({navigation, route}) {
-  console.log(route.params);
   const [dayMark, setDayMark] = useState(functions.getDate());
   const [flag, setFlag] = useState(false);
   const changeDay = day => {
