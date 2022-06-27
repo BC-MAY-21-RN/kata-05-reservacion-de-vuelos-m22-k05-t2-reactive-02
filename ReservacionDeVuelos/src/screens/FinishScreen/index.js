@@ -16,7 +16,6 @@ const FinishScreen = ({navigation, route}) => {
   const user = React.useContext(UserContext);
 
   useEffect(() => {
-    console.log(addData);
     if (addData === true) {
       firestore()
         .collection('flights')
