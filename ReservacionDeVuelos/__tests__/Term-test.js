@@ -3,6 +3,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Terms from '../src/components/atoms/Term';
 
+jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter');
+
 describe('Tests Terms component', () => {
   it('Terms snapshot', () => {
     const renderTerms = renderer

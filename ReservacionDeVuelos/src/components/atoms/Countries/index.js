@@ -13,9 +13,11 @@ const Countries = ({data}) => {
       <Icon name="airplane" style={styles.plane} />
       {views.map((Component, index) => (
         <Component
+          key={index}
           style={styles.line}
           children={texts.map((TextComponent, index2) => (
             <TextComponent
+              key={index2}
               style={index === 0 ? styles.abbreviation : styles.country}>
               {functions.getText(data, index, index2)}
             </TextComponent>

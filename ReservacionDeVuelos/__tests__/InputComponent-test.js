@@ -3,6 +3,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import InputComponent from '../src/components/atoms/InputComponent';
 
+jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter');
+
 describe('Tests InputComponent component', () => {
   it('InputComponent snapshot', () => {
     const renderInputComponent = renderer

@@ -22,7 +22,7 @@ exports[`Tests FlighDetails component FlighDetails snapshot 1`] = `
       }
     }
   >
-    2022-06-16
+    May 20, 2022
   </Text>
   <Text
     style={
@@ -32,7 +32,7 @@ exports[`Tests FlighDetails component FlighDetails snapshot 1`] = `
       }
     }
   >
-    5
+    4
      
     passangers
   </Text>

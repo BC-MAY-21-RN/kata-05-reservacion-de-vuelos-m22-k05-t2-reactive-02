@@ -28,6 +28,7 @@ const listTerm = [
 const ListInputsComponent = ({changeForm, form, alert}) => {
   return listInputs.map((Component, index) => (
     <Component
+      key={index}
       title={texts.register['input' + (index + 1).toString()]}
       changeForm={changeForm}
       input={'input' + (index + 1).toString()}
@@ -40,6 +41,7 @@ const ListInputsComponent = ({changeForm, form, alert}) => {
 const ListTermsComponent = ({form, changeForm}) => {
   return listTerm.map((Component, index) => (
     <Component.Component
+      key={index}
       text={Component.textCheck}
       isfirst={index === 0 ? true : false}
       changeForm={changeForm}
