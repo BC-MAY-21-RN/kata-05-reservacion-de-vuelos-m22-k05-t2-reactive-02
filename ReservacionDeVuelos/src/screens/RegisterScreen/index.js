@@ -18,66 +18,72 @@ const newObject = object => {
   );
 };
 
-export default function RegisterScreen({navigation}) {
-  const [form, setform] = useState(new RegisterUser());
-  const [buttonsActive, setButtonsActive] = useState(false);
-  const [alert, setAlert] = useState(false);
+const listInputs = [InputComponent, InputComponent, InputComponent];
 
-  const changeForm = (value, key) => {
-    form.setValues({[key]: value});
-    setButtonsActive(form.getBool());
-    setform(newObject(form));
-  };
+const listTerm = [
+  {Component: Terms, text: 'check1', textCheck: texts.register.term1},
+  {Component: Terms, text: 'check2', textCheck: texts.register.term2},
+];
 
-  const changeAlert = bool => setAlert(bool);
+const ListInputsComponent = ({changeForm, form, alert}) => {
+  return listInputs.map((Component, index) => (
+    <Component
+      title={texts.register['input' + (index + 1).toString()]}
+      changeForm={changeForm}
+      input={'input' + (index + 1).toString()}
+      text={form.getValues()['input' + (index + 1).toString()].length > 0}
+      alert={alert}
+    />
+  ));
+};
 
+const ListTermsComponent = ({form, changeForm}) => {
+  return listTerm.map((Component, index) => (
+    <Component.Component
+      text={Component.textCheck}
+      isfirst={index === 0 ? true : false}
+      changeForm={changeForm}
+      ischecked={form.valuesRegister[Component.text]}
+      term={Component.text}
+    />
+  ));
+};
+
+const BottomComponent = ({form, changeAlert, navigation}) => {
   return (
     <View>
-      <Text style={styles.title}>{texts.register.title}</Text>
-      <InputComponent
-        title={texts.register.input1}
-        changeForm={changeForm}
-        input={'input1'}
-        text={form.getValues().input1.length > 0}
-        alert={alert}
-      />
-      <InputComponent
-        title={texts.register.input2}
-        changeForm={changeForm}
-        input={'input2'}
-        text={form.getValues().input2.length > 0}
-        alert={alert}
-      />
-      <InputComponent
-        title={texts.register.input3}
-        changeForm={changeForm}
-        input={'input3'}
-        text={form.getValues().input3.length > 0}
-        alert={alert}
-      />
-      <Terms
-        text={texts.register.term1}
-        isfirst={true}
-        changeForm={changeForm}
-        ischecked={form.valuesRegister.check1}
-        term={'check1'}
-      />
-      <Terms
-        text={texts.register.term2}
-        isfirst={false}
-        changeForm={changeForm}
-        ischecked={form.valuesRegister.check2}
-        term={'check2'}
-      />
       <Buttons
-        buttonsActive={buttonsActive}
+        buttonsActive={form.getBool()}
         form={form.getValues()}
         changeAlert={changeAlert}
       />
       <BottomText
         navigation={navigation}
-        text={'Log in'}
+        textComponent={'Log in'}
         nameScreen={'Login'}
+      />
+    </View>
+  );
+};
+
+export default function RegisterScreen({navigation}) {
+  const [form, setform] = useState(new RegisterUser());
+  const [alert, setAlert] = useState(false);
+  const changeForm = (value, key) => {
+    form.setValues({[key]: value});
+    setform(newObject(form));
+  };
+  const changeAlert = bool => setAlert(bool);
+
+  return (
+    <View>
+      <Text style={styles.title}>{texts.register.title}</Text>
+      <ListInputsComponent alert={alert} changeForm={changeForm} form={form} />
+      <ListTermsComponent changeForm={changeForm} form={form} />
+      <BottomComponent
+        changeAlert={changeAlert}
+        form={form}
+        navigation={navigation}
       />
     </View>
   );

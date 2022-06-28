@@ -24,7 +24,7 @@ export default function InputComponent({
   title,
   changeForm,
   input,
-  text,
+  textL,
   alert,
 }) {
   const [iconisSelect, setIconIsSelect] = useState(true);
@@ -33,7 +33,7 @@ export default function InputComponent({
       <InputTitle title={title} input={input} alert={alert} />
       <TextInput
         secureTextEntry={title === 'Password' ? iconisSelect : false}
-        style={func.inputstyle(text)}
+        style={func.inputstyle(textL)}
         onChange={(e, a) => changeForm(e.nativeEvent.text, input)}
       />
       {title === 'Password' ? (
