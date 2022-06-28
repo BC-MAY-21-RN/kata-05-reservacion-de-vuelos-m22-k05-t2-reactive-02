@@ -13,13 +13,3 @@ const CardFlight = ({data}) => {
 };
 
 export default CardFlight;
-
-/*
-        <Countries
-        avDestino={avDestino}
-        avOrigen={avOrigen}
-        destino={destino}
-        origen={origen}
-      />
-      <FlightDetails fecha={fecha} passengers={passengers} />
-*/

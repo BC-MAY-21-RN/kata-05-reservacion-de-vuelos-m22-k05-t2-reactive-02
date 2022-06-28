@@ -13,13 +13,3 @@ const globalstyles = (v1, v2, v3) =>
   });
 
 export default globalstyles;
-
-/*
-  marginTop:
-    Dimensions.get('screen').height <= 640
-      ? {marginTop: 7}
-      : Dimensions.get('screen').height >= 641 &&
-        Dimensions.get('screen').height < 730
-      ? {marginTop: 15}
-      : {marginTop: 18},
-*/
