@@ -1,7 +1,20 @@
 import {StyleSheet, Dimensions} from 'react-native';
 
-const globalstyles = StyleSheet.create({
-  screenContainer: {width: '100%', height: '100%'},
+const globalstyles = (v1, v2, v3) =>
+  StyleSheet.create({
+    screenContainer: {width: '100%', height: '100%'},
+    marginTop:
+      Dimensions.get('screen').height <= 640
+        ? {marginTop: v1}
+        : Dimensions.get('screen').height >= 641 &&
+          Dimensions.get('screen').height < 730
+        ? {marginTop: v2}
+        : {marginTop: v3},
+  });
+
+export default globalstyles;
+
+/*
   marginTop:
     Dimensions.get('screen').height <= 640
       ? {marginTop: 7}
@@ -9,6 +22,4 @@ const globalstyles = StyleSheet.create({
         Dimensions.get('screen').height < 730
       ? {marginTop: 15}
       : {marginTop: 18},
-});
-
-export default globalstyles;
+*/

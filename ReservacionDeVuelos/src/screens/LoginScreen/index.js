@@ -39,7 +39,7 @@ export default function LoginScreen({navigation}) {
       <Buttons buttonsActive={form.getBool()} form={form.valuesLogin} />
       <BottomText
         navigation={navigation}
-        text={'Sign Up'}
+        textComponent={'Sign Up'}
         nameScreen={'Register'}
       />
     </View>

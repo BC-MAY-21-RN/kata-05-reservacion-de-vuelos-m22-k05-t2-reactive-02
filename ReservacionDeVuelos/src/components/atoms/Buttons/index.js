@@ -8,7 +8,7 @@ import globalstyle from '../../../consts/globalstyles';
 
 export default function Buttons({buttonsActive, form, changeAlert}) {
   return (
-    <View style={globalstyle.container}>
+    <View style={globalstyle(15, 19, 30).marginTop}>
       <TouchableOpacity
         onPress={() => {
           func.validate(form.input3, form.input2, form.input1, changeAlert);

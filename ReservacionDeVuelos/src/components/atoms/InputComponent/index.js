@@ -29,7 +29,7 @@ export default function InputComponent({
 }) {
   const [iconisSelect, setIconIsSelect] = useState(true);
   return (
-    <View style={globalstyles.container}>
+    <View style={globalstyles(7, 15, 18).marginTop}>
       <InputTitle title={title} input={input} alert={alert} />
       <TextInput
         secureTextEntry={title === 'Password' ? iconisSelect : false}
