@@ -18,7 +18,7 @@ export default function FlightsScreen({navigation}) {
   );
 
   return (
-    <View style={globalstyles.screenContainer}>
+    <View style={globalstyles().screenContainer}>
       <FlatList
         data={getData}
         renderItem={({item}) => <CardFlight data={item} />}

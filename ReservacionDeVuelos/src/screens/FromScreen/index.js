@@ -12,7 +12,7 @@ import arrayItems from '../../consts/flights';
 export default function FromScreen({navigation}) {
   const [item, setItem] = useState({});
   return (
-    <View style={globalstyles.screenContainer}>
+    <View style={globalstyles().screenContainer}>
       <BackButton navigation={navigation} />
       <TextIndicator text={'Where are you now?'} style={styles.margin} />
       <View style={styles.containerList}>

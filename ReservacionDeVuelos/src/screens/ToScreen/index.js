@@ -14,7 +14,7 @@ import arrayItems from '../../consts/flights';
 export default function ToScreen({navigation, route}) {
   const [to, setTo] = useState({});
   return (
-    <View style={globalstyles.screenContainer}>
+    <View style={globalstyles().screenContainer}>
       <BackButton navigation={navigation} />
       <Countries data={route.params} />
       <TextIndicator text={texts.to.title} style={styles.margin} />
