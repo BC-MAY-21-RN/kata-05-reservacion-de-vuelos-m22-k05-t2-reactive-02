@@ -12,10 +12,13 @@ import texts from '../../consts/text';
 
 const arrayItems = [
   {label: 'Belgrade, Serbia', value: {subtitle: 'Serbia', title: 'BEG'}},
-  {label: 'Berlin, Germany', value: {subtitle: 'Germany', title: 'BEL'}},
+  {label: 'Napoles, Italia', value: {subtitle: 'Italy', title: 'NAP'}},
   {label: 'Oaxaca, México', value: {subtitle: 'México', title: 'OAX'}},
-  {label: 'Berlin, Germany', value: {subtitle: 'Germany', title: 'BEL'}},
-  {label: 'Oaxaca, México', value: {subtitle: 'México', title: 'OAX'}},
+  {label: 'Berlin, Germany', value: {subtitle: 'Germany', title: 'BER'}},
+  {
+    label: 'Saskatchewan, Canada',
+    value: {subtitle: 'Saskatchewan', title: 'SAS'},
+  },
 ];
 
 export default function ToScreen({navigation, route}) {
@@ -29,7 +32,7 @@ export default function ToScreen({navigation, route}) {
         <RNPickerSelect
           placeholder={{label: 'Select your destine', value: false}}
           onValueChange={value => setTo(value)}
-          items={arrayItems}
+          items={functions.newArray(arrayItems, route.params)}
         />
       </SafeAreaView>
       <BottomButton
@@ -41,34 +44,3 @@ export default function ToScreen({navigation, route}) {
     </View>
   );
 }
-
-/*
-  =======
-      <Countries avOrigen={values.from.subtitle} origen={values.from.title} />
-      <View style={styles.margin}>
-        <TextIndicator text={'Where will you be flying to?'} />
-      </View>
-      <View style={styles.containerList}>
-        <SafeAreaView style={styles.container}>
-          <RNPickerSelect
-            placeholder={{label: 'Select your destine', value: false}}
-            onValueChange={value => setTo(value)}
-            items={arrayItems}
-          />
-        </SafeAreaView>
-      </View>
-      <TouchableOpacity
-        style={{
-          ...styles.button,
-          ...(to != null
-            ? {backgroundColor: colors.bluetitle}
-            : {backgroundColor: 'gray'}),
-        }}
-        disabled={!(to != null)}
-        onPress={() => {
-          navigation.navigate('DateScreen', {to: to, from: values.from});
-        }}>
-        <Text style={styles.textButton}>Next</Text>
-      </TouchableOpacity>
->>>>>>> master
-*/

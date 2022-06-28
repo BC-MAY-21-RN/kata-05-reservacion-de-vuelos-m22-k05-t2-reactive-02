@@ -5,25 +5,8 @@ import TextIndicator from '../../components/atoms/TextIndicator';
 import styles from '../FromScreen/styles';
 import colors from '../../consts/colors';
 import BackButton from '../../components/atoms/BackButton';
-import firestore from '@react-native-firebase/firestore';
 import UserContext from '../../context/UserContext';
-
-const addFlightFunction = (user, data, navigation) => {
-  firestore()
-    .collection('flights')
-    .add({
-      uid: user.user.uid,
-      avDestino: data.avDestino,
-      avOrigen: data.avOrigen,
-      destino: data.destino,
-      fecha: data.fecha,
-      origen: data.origen,
-      passengers: data.passengers,
-    })
-    .then(() => {
-      navigation.navigate('Flights');
-    });
-};
+import functions from './functions';
 
 export default function FinishScreen({navigation, route}) {
   const data = route.params;
@@ -40,7 +23,7 @@ export default function FinishScreen({navigation, route}) {
           ...{backgroundColor: colors.bluetitle},
         }}
         onPress={() => {
-          addFlightFunction(user, data, navigation);
+          functions.addFlightFunction(user, data, navigation);
         }}>
         <Text style={{...styles.textButton, ...{color: '#ffffff'}}}>
           Finish
