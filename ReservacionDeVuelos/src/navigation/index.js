@@ -3,7 +3,6 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 import UserContext from '../context/UserContext.js';
 import auth from '@react-native-firebase/auth';
-import BackSVG from '../assets/icons/back.svg';
 
 import RegisterScreen from '../screens/RegisterScreen';
 import LoginScreen from '../screens/LoginScreen';

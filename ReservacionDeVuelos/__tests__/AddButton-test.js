@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import AddButton from '../src/components/atoms/AddButton';
 
 describe('Tests from AddButton component', () => {
-  it('AddButton snapshot', () => {
+  it('AddButton snapshot test', () => {
     const renderAddButton = renderer.create(<AddButton />).toJSON();
     expect(renderAddButton).toMatchSnapshot();
   });

@@ -2,9 +2,9 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import styles from './style';
 
-export default function TextIndicator({text}) {
+export default function TextIndicator({text, style}) {
   return (
-    <View>
+    <View style={style}>
       <Text style={styles.title}>{text}</Text>
     </View>
   );

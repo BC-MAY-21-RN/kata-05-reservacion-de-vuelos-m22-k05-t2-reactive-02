@@ -3,20 +3,11 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Countries from '../src/components/atoms/Countries';
 
+jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter');
+
 describe('Tests Countries component', () => {
   it('Countries snapshot', () => {
-    const renderCountries = renderer
-      .create(
-        <Countries
-          values={{
-            from: {title: 'AWS', subtitle: 'Amazon web services'},
-            to: {title: 'ML', subtitle: 'Mercado Libre'},
-            date: '2022-06-16',
-            passengers: 5,
-          }}
-        />,
-      )
-      .toJSON();
+    const renderCountries = renderer.create(<Countries data={{}} />).toJSON();
     expect(renderCountries).toMatchSnapshot();
   });
 });

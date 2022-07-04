@@ -54,7 +54,9 @@ exports[`Tests BottomText component BottomText snapshot 1`] = `
             "fontSize": 16,
           }
         }
-      />
+      >
+        
+      </Text>
     </View>
   </View>
 </View>

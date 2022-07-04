@@ -2,13 +2,6 @@ import {StyleSheet, Dimensions} from 'react-native';
 import colors from '../../../consts/colors';
 
 const styles = StyleSheet.create({
-  container:
-    Dimensions.get('screen').height <= 640
-      ? {marginTop: 7}
-      : Dimensions.get('screen').height >= 641 &&
-        Dimensions.get('screen').height < 730
-      ? {marginTop: 15}
-      : {marginTop: 18},
   font18: {fontSize: 18},
   font16: {fontSize: 16},
   titleInput: {

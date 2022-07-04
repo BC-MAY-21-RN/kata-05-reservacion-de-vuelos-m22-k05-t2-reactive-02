@@ -2,6 +2,11 @@
 
 exports[`Tests BottomButton component BottomButton snapshot 1`] = `
 <View
+  accessibilityState={
+    Object {
+      "disabled": true,
+    }
+  }
   accessible={true}
   collapsable={false}
   focusable={true}
@@ -17,7 +22,7 @@ exports[`Tests BottomButton component BottomButton snapshot 1`] = `
       "alignContent": "center",
       "alignItems": "center",
       "alignSelf": "center",
-      "backgroundColor": "#5C6DF8",
+      "backgroundColor": "#3C404855",
       "borderRadius": 10,
       "bottom": 45,
       "height": 45,
@@ -36,7 +41,7 @@ exports[`Tests BottomButton component BottomButton snapshot 1`] = `
       }
     }
   >
-    Next
+    
   </Text>
 </View>
 `;

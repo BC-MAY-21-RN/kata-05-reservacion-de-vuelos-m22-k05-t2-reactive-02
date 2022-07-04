@@ -2,19 +2,28 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
+import functions from './functions';
 
-const Countries = ({avOrigen, avDestino, destino, origen}) => {
+const texts = [Text, Text];
+const views = [View, View];
+
+const Countries = ({data}) => {
   return (
     <View style={styles.container}>
       <Icon name="airplane" style={styles.plane} />
-      <View style={styles.line}>
-        <Text style={styles.abbreviation}>{avOrigen}</Text>
-        <Text style={styles.abbreviation}>{avDestino}</Text>
-      </View>
-      <View style={styles.line}>
-        <Text style={styles.country}>{origen}</Text>
-        <Text style={styles.country}>{destino}</Text>
-      </View>
+      {views.map((Component, index) => (
+        <Component
+          key={index}
+          style={styles.line}
+          children={texts.map((TextComponent, index2) => (
+            <TextComponent
+              key={index2}
+              style={index === 0 ? styles.abbreviation : styles.country}>
+              {functions.getText(data, index, index2)}
+            </TextComponent>
+          ))}
+        />
+      ))}
     </View>
   );
 };

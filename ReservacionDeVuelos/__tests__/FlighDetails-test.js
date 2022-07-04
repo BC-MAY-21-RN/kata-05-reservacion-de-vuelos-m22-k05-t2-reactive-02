@@ -6,16 +6,7 @@ import FlighDetails from '../src/components/atoms/FlighDetails';
 describe('Tests FlighDetails component', () => {
   it('FlighDetails snapshot', () => {
     const renderFlighDetails = renderer
-      .create(
-        <FlighDetails
-          values={{
-            from: {title: 'AWS', subtitle: 'Amazon web services'},
-            to: {title: 'ML', subtitle: 'Mercado Libre'},
-            date: '2022-06-16',
-            passengers: 5,
-          }}
-        />,
-      )
+      .create(<FlighDetails data={{passengers: 4, fecha: '2022-05-20'}} />)
       .toJSON();
     expect(renderFlighDetails).toMatchSnapshot();
   });

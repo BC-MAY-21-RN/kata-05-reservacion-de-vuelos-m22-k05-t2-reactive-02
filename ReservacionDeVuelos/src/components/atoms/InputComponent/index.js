@@ -5,6 +5,7 @@ import VisibleSVG from '../../../assets/icons/visible.svg';
 import VisibleBlueSVG from '../../../assets/icons/visibleblue.svg';
 import styles from './style';
 import func from './functions';
+import globalstyles from '../../../consts/globalstyles';
 
 const InputTitle = ({title, input, alert}) => {
   return (
@@ -23,16 +24,16 @@ export default function InputComponent({
   title,
   changeForm,
   input,
-  text,
+  textL,
   alert,
 }) {
   const [iconisSelect, setIconIsSelect] = useState(true);
   return (
-    <View style={styles.container}>
+    <View style={globalstyles(7, 15, 18).marginTop}>
       <InputTitle title={title} input={input} alert={alert} />
       <TextInput
         secureTextEntry={title === 'Password' ? iconisSelect : false}
-        style={func.inputstyle(text)}
+        style={func.inputstyle(textL)}
         onChange={(e, a) => changeForm(e.nativeEvent.text, input)}
       />
       {title === 'Password' ? (

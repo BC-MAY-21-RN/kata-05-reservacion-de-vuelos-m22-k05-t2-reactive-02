@@ -10,23 +10,13 @@ import CardFlight from '../../components/molecules/CardFlight';
 export default function PassengerScreen({navigation, route}) {
   const [scroll, setScroll] = useState(0);
   const [number, setnumber] = useState(1);
-  const values = route.params;
   const changeNumber = num => setnumber(num);
   const changeScroll = num => setScroll(num);
-
   return (
     <View style={styles.container}>
       <BackButton navigation={navigation} />
-      <CardFlight
-        avOrigen={values.from.subtitle}
-        origen={values.from.title}
-        avDestino={values.to.subtitle}
-        destino={values.to.title}
-        fecha={values.date}
-      />
-      <View style={styles.margin}>
-        <TextIndicator text="How many passengers?" />
-      </View>
+      <CardFlight data={route.params} />
+      <TextIndicator text="How many passengers?" style={styles.margin} />
       <ScrollComponent
         changeNumber={changeNumber}
         changeScroll={changeScroll}
@@ -35,7 +25,9 @@ export default function PassengerScreen({navigation, route}) {
       />
       <BottomButton
         navigation={navigation}
-        values={{...values, ...{passengers: number}}}
+        values={{...route.params, ...{passengers: number}}}
+        screenName={'FinishScreen'}
+        active={true}
       />
     </View>
   );

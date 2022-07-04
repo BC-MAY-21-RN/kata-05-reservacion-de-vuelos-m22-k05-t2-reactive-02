@@ -2,13 +2,6 @@ import {StyleSheet, Dimensions} from 'react-native';
 import colors from '../../../consts/colors';
 
 const styles = StyleSheet.create({
-  container:
-    Dimensions.get('screen').height <= 640
-      ? {marginTop: 15}
-      : Dimensions.get('screen').height >= 641 &&
-        Dimensions.get('screen').height < 730
-      ? {marginTop: 19}
-      : {marginTop: 30},
   touchable: {
     backgroundColor: colors.inactive,
     height: 40,

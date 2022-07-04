@@ -12,28 +12,14 @@ const createAccount = (email, password, userName) => {
   auth()
     .createUserWithEmailAndPassword(email, password)
     .then(() => {})
-    .catch(error => {
-      if (error.code === 'auth/email-already-in-use') {
-      }
-      if (error.code === 'auth/invalid-email') {
-      }
-    });
+    .catch(error => {});
 };
 
 const loginAccount = (email, password) => {
   auth()
     .signInWithEmailAndPassword(email, password)
-    .then(() => {
-      // User account created & signed in!
-    })
-    .catch(error => {
-      if (error.code === 'auth/email-already-in-use') {
-        // That email address is already in use!
-      }
-      if (error.code === 'auth/invalid-email') {
-        // That email address is invalid!
-      }
-    });
+    .then(() => {})
+    .catch(error => {});
 };
 
 function validate(password, mail, userName, changeAlert) {
@@ -52,16 +38,18 @@ function validate(password, mail, userName, changeAlert) {
   }
 }
 
+const buttonstyle = buttonsActive => {
+  return {
+    ...styles.touchable,
+    ...(buttonsActive ? styles.buttonActive : null),
+  };
+};
+
 const func = {
   onGoogleButtonPress,
   createAccount,
   validate,
-  buttonstyle: buttonsActive => {
-    return {
-      ...styles.touchable,
-      ...(buttonsActive ? styles.buttonActive : null),
-    };
-  },
+  buttonstyle,
 };
 
 export default func;
